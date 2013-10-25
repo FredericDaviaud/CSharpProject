@@ -1,4 +1,4 @@
 CSharpProject
 =============
 Fred: Commit: OK
-Ph : en cours
+Ph : edit on GitHub
