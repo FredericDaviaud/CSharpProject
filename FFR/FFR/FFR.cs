@@ -11,17 +11,18 @@ using Microsoft.Xna.Framework.Media;
 
 namespace FFR
 {
-    /// <summary>
-    /// This is the main type for your game
-    /// </summary>
-    public class Game1 : Microsoft.Xna.Framework.Game
+    public class FFR : Microsoft.Xna.Framework.Game
     {
+        private Texture2D arrowReceptor;
+
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        public Game1()
+        public FFR()
         {
             graphics = new GraphicsDeviceManager(this);
+            graphics.PreferredBackBufferHeight = 480;
+            graphics.PreferredBackBufferWidth = 780;
             Content.RootDirectory = "Content";
         }
 
@@ -47,7 +48,7 @@ namespace FFR
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
+            arrowReceptor = Content.Load<Texture2D>("Arrows\\Receptor");
         }
 
         /// <summary>
@@ -81,11 +82,36 @@ namespace FFR
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Black);
 
-            // TODO: Add your drawing code here
+            spriteBatch.Begin();
+
+            var origin = new Vector2()
+            {
+                X = arrowReceptor.Width / 2,
+                Y = arrowReceptor.Height / 2
+            };
+
+            for(int i = 265; i <563 ; i+=82) 
+            {
+                spriteBatch.Draw(arrowReceptor, new Vector2(i, 85), null, Color.White, arrowReceptorAngle(i), origin, 1.13f, SpriteEffects.None, 0f);
+            }
+            spriteBatch.End();
+            
 
             base.Draw(gameTime);
+        }
+
+        private float arrowReceptorAngle(int i)
+        {
+            switch (i)
+            {
+                case 265: return -MathHelper.Pi / 2;
+                case 347: return MathHelper.Pi;
+                case 429: return 0;
+                case 511: return MathHelper.Pi / 2;
+                default:  return MathHelper.Pi / 2;
+            }
         }
     }
 }
