@@ -83,6 +83,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\FFR.Utils\FFR.Utils.csproj">
+      <Project>{340649c7-bcbd-41aa-b688-2085d5612ed4}</Project>
+      <Name>FFR.Utils</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FFRContent\FFRContent.contentproj">
       <Name>FFRContent</Name>
       <XnaReferenceType>Content</XnaReferenceType>

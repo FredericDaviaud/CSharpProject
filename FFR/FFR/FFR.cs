@@ -1,20 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
+using FFR.Utils;
 
 namespace FFR
 {
     public class FFR : Microsoft.Xna.Framework.Game
     {
-        private Texture2D arrowReceptor;
-
+        private ArrowReceptor arrowReceptor;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
@@ -28,14 +21,15 @@ namespace FFR
 
         protected override void Initialize()
         {
+            arrowReceptor = new ArrowReceptor();
+            arrowReceptor.Initialize();
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            arrowReceptor = Content.Load<Texture2D>("Arrows\\Receptor");
+            arrowReceptor.LoadContent(Content, "Arrows\\Receptor");
         }
 
         protected override void UnloadContent()
@@ -48,6 +42,8 @@ namespace FFR
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
+            arrowReceptor.Update(gameTime);
+
             base.Update(gameTime);
         }
 
@@ -55,33 +51,12 @@ namespace FFR
         {
             GraphicsDevice.Clear(Color.Black);
 
-            var origin = new Vector2()
-            {
-                X = arrowReceptor.Width / 2,
-                Y = arrowReceptor.Height / 2
-            };
-
             spriteBatch.Begin();
 
-            for(int i = 265; i <563 ; i+=82) 
-            {
-                spriteBatch.Draw(arrowReceptor, new Vector2(i, 85), null, Color.White, arrowReceptorAngle(i), origin, 1.13f, SpriteEffects.None, 0f);
-            }
+            arrowReceptor.Draw(spriteBatch, gameTime);
 
             spriteBatch.End();
             base.Draw(gameTime);
-        }
-
-        private float arrowReceptorAngle(int i)
-        {
-            switch (i)
-            {
-                case 265: return -MathHelper.Pi / 2;
-                case 347: return MathHelper.Pi;
-                case 429: return 0;
-                case 511: return MathHelper.Pi / 2;
-                default:  return MathHelper.Pi / 2;
-            }
         }
     }
 }
