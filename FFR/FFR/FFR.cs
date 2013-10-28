@@ -16,6 +16,8 @@ namespace FFR
         public FFR()
         {
             graphics = new GraphicsDeviceManager(this);
+            IsFixedTimeStep = false;
+            graphics.SynchronizeWithVerticalRetrace = false;
             graphics.PreferredBackBufferHeight = int.Parse(ConfigurationManager.AppSettings["WINDOW_HEIGHT"]);
             graphics.PreferredBackBufferWidth = int.Parse(ConfigurationManager.AppSettings["WINDOW_WIDTH"]);
             Content.RootDirectory = "Content";
@@ -24,7 +26,7 @@ namespace FFR
         protected override void Initialize()
         {
             arrowReceptor = new ArrowReceptor();
-            arrowTest = new Arrow(ArrowColor.Yellow, Row.Row1);
+            arrowTest = new Arrow(ArrowColors.Yellow, Rows.Row1);
             arrowReceptor.Initialize();
             arrowTest.Initialize();
             base.Initialize();
@@ -47,8 +49,7 @@ namespace FFR
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            arrowReceptor.Update(gameTime);
-
+            arrowTest.Update(gameTime);
             base.Update(gameTime);
         }
 

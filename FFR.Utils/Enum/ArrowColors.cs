@@ -1,6 +1,6 @@
 ﻿namespace FFR.Utils
 {
-    public class ArrowColor
+    public class ArrowColors
     {
         public static string Blue = "Arrows\\Blue";
         public static string Cyan = "Arrows\\Cyan";

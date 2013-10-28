@@ -49,6 +49,7 @@
     <Reference Include="Microsoft.Xna.Framework.GamerServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
     <Reference Include="mscorlib" />
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
@@ -59,14 +60,16 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Arrow.cs" />
-    <Compile Include="Enum\ArrowColor.cs" />
-    <Compile Include="ArrowReceptor.cs" />
+    <Compile Include="Model\Arrow.cs" />
+    <Compile Include="Enum\ArrowColors.cs" />
+    <Compile Include="Model\ArrowReceptor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sprite.cs" />
+    <Compile Include="Model\Score.cs" />
+    <Compile Include="Model\Song.cs" />
+    <Compile Include="Model\Sprite.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enum\Row.cs" />
+    <Compile Include="Enum\Rows.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Interface\" />

@@ -1,6 +1,6 @@
 ﻿namespace FFR.Utils
 {
-    public enum Row
+    public enum Rows
     {
 		Row1 = 265,
 		Row2 = 347,
