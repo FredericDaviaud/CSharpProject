@@ -1,9 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace FFR.Utils
 {
@@ -29,11 +25,11 @@ namespace FFR.Utils
         {
             switch (i)
             {
-                case 265: return -MathHelper.Pi / 2;
-                case 347: return MathHelper.Pi;
-                case 429: return 0;
-                case 511: return MathHelper.Pi / 2;
-                default: return MathHelper.Pi / 2;
+                case (int) Row.Row1: return -MathHelper.Pi / 2;
+                case (int) Row.Row2: return MathHelper.Pi;
+                case (int) Row.Row3: return 0;
+                case (int) Row.Row4: return  MathHelper.Pi / 2;
+                default: return   MathHelper.Pi / 2;
             }
         }
     }
