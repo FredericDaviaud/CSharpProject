@@ -5,15 +5,12 @@ namespace FFR.Utils
 {
     public class ArrowReceptor : Arrow
     {
-        private int currentFrame;
+        private int currentFrame = 5;
         private int lastFrame = 0;
         private int animationTimer = 0;
         public bool isKeyHit { get; set; }
 
-        public ArrowReceptor() 
-        {
-            currentFrame = 5;
-        }
+        public ArrowReceptor() { }
 
         public ArrowReceptor(Rows arrowRow) 
         {

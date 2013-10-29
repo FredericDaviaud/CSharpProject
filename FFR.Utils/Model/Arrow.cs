@@ -11,7 +11,8 @@ namespace FFR.Utils
         public int ArrowRow { get; set; }
         public string ArrowColor { get; private set; }
         public float ArrowTime { get; private set; }
-        public bool IsVisible = true;
+        public bool isVisible = true;
+        public bool isArrowHit = false;
         
 
         public Arrow() 
@@ -42,18 +43,22 @@ namespace FFR.Utils
 
         public override void Update(GameTime gameTime)
         {
-            if (ArrowTime * 1000 > gameTime.TotalGameTime.TotalMilliseconds
-                || Position.Y + Texture.Height / 2 < 0) IsVisible = false;
-            else
+            if (!isArrowHit)
             {
-                IsVisible = true;
-                Position -= Direction * Speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+                if (ArrowTime * 1000 > gameTime.TotalGameTime.TotalMilliseconds
+                    || Position.Y + Texture.Height / 2 < 0) isVisible = false;
+                else
+                {
+                    isVisible = true;
+                    Position -= Direction * Speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+                }
             }
+            else isVisible = false;
         }
 
         public override void Draw(SpriteBatch spriteBatch, GameTime gamerTime)
         {
-            if (IsVisible)
+            if (isVisible)
             {
                 var Origin = new Vector2()
                 {

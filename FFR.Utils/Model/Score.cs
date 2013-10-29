@@ -11,6 +11,7 @@ namespace FFR.Utils
         public int GoodCount { get; set; }
         public int AverageCount { get; set; }
         public int MissCount { get; set; }
+        public int Combo { get; set; }
 
         public Score()
         {
@@ -18,6 +19,7 @@ namespace FFR.Utils
             this.GoodCount = 0;
             this.AverageCount = 0;
             this.MissCount = 0;
+            this.Combo = 0;
         }
 
         public Score(int perfectCount, int goodCount, int averageCount, int missCount)

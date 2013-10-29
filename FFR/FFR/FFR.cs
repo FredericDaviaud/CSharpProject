@@ -13,6 +13,7 @@ namespace FFR
         private ArrowReceptor arrowReceptorUp;
         private ArrowReceptor arrowReceptorRight;
         private Song arrowMadnessTest;
+        private Judge judge;
         private KeyboardState oldState;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
@@ -34,12 +35,14 @@ namespace FFR
             arrowReceptorUp = new ArrowReceptor(Rows.Row3);
             arrowReceptorRight = new ArrowReceptor(Rows.Row4);
             arrowMadnessTest = new Song();
+            judge = new Judge();
 
             arrowReceptorLeft.Initialize();
             arrowReceptorDown.Initialize();
             arrowReceptorUp.Initialize();
             arrowReceptorRight.Initialize();
             arrowMadnessTest.ArrowMadnessTest();
+            judge.Initialize();
             //arrowMadnessTest.Music = "Songs\\Nyan";
             foreach (Arrow arrow in arrowMadnessTest.ArrowList)
             {
@@ -55,6 +58,7 @@ namespace FFR
             arrowReceptorDown.LoadContent(Content, "Animation\\ArrowReceptorSheet");
             arrowReceptorUp.LoadContent(Content, "Animation\\ArrowReceptorSheet");
             arrowReceptorRight.LoadContent(Content, "Animation\\ArrowReceptorSheet");
+            judge.LoadContent(Content, "Judge\\Judge");
             foreach (Arrow arrow in arrowMadnessTest.ArrowList)
             {
                 arrow.LoadContent(Content, arrow.ArrowColor.ToString());
@@ -79,19 +83,48 @@ namespace FFR
             if (oldState.IsKeyUp(Keys.Left) && newState.IsKeyDown(Keys.Left))
             {
                 arrowReceptorLeft.isKeyHit = true;
+                Arrow nextArrow = arrowMadnessTest.ArrowList.Find(
+                delegate(Arrow arrow)
+                {
+                    return ((arrow.ArrowRow == (int) Rows.Row1) && (arrow.isVisible == true));
+                }
+                );
+                judge.Update(gameTime, nextArrow);
             }
             if (oldState.IsKeyUp(Keys.Down) && newState.IsKeyDown(Keys.Down))
             {
                 arrowReceptorDown.isKeyHit = true;
+                Arrow nextArrow = arrowMadnessTest.ArrowList.Find(
+                delegate(Arrow arrow)
+                {
+                    return ((arrow.ArrowRow == (int)Rows.Row2) && (arrow.isVisible == true));
+                }
+                );
+                judge.Update(gameTime, nextArrow);
             }
             if (oldState.IsKeyUp(Keys.Up) && newState.IsKeyDown(Keys.Up))
             {
                 arrowReceptorUp.isKeyHit = true;
+                Arrow nextArrow = arrowMadnessTest.ArrowList.Find(
+                delegate(Arrow arrow)
+                {
+                    return ((arrow.ArrowRow == (int)Rows.Row3) && (arrow.isVisible == true));
+                }
+                );
+                judge.Update(gameTime, nextArrow);
             }
             if (oldState.IsKeyUp(Keys.Right) && newState.IsKeyDown(Keys.Right))
             {
                 arrowReceptorRight.isKeyHit = true;
+                Arrow nextArrow = arrowMadnessTest.ArrowList.Find(
+                delegate(Arrow arrow)
+                {
+                    return ((arrow.ArrowRow == (int)Rows.Row4) && (arrow.isVisible == true));
+                }
+                );
+                judge.Update(gameTime, nextArrow);
             }
+
             foreach (Arrow arrow in arrowMadnessTest.ArrowList)
             {
                 arrow.Update(gameTime);
@@ -111,6 +144,7 @@ namespace FFR
             arrowReceptorDown.Draw(spriteBatch, gameTime);
             arrowReceptorUp.Draw(spriteBatch, gameTime);
             arrowReceptorRight.Draw(spriteBatch, gameTime);
+            judge.Draw(spriteBatch, gameTime);
             foreach (Arrow arrow in arrowMadnessTest.ArrowList)
             {
                 arrow.Draw(spriteBatch, gameTime);

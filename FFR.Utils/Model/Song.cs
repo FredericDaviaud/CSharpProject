@@ -12,7 +12,7 @@ namespace FFR.Utils
         public String Name { get; private set; }
         public String Artist { get; private set; }
         public int Length { get; private set; }
-        public Score BestScore { get; private set; }
+        public Score Score { get; private set; }
         public List<Arrow> ArrowList { get; private set; }
         public String Music { get; set; } //temp
 
@@ -21,7 +21,7 @@ namespace FFR.Utils
             this.Name = "Unknown";
             this.Artist = "Unknown";
             this.Length = -1;
-            this.BestScore = new Score();
+            this.Score = new Score();
             this.ArrowList = null;
             this.Music = "";
         }
@@ -31,7 +31,7 @@ namespace FFR.Utils
             this.Name = name;
             this.Artist = artist;
             this.Length = length;
-            this.BestScore = bestScore;
+            this.Score = bestScore;
             this.ArrowList = arrowlist;
             this.Music = song;
         }
@@ -46,7 +46,7 @@ namespace FFR.Utils
             catch (Exception) { }
         }
 
-        public void ArrowMadnessTest()
+        public void ArrowMadnessTest() //test method
         {
             Random rand = new Random();
             ArrowList = new List<Arrow>();
@@ -56,7 +56,7 @@ namespace FFR.Utils
             }
         }
 
-        private String randColor(int i)
+        private String randColor(int i) //test method
         {
             switch (i)
             {
@@ -72,7 +72,7 @@ namespace FFR.Utils
             }
         }
 
-        private Rows randRow(int i)
+        private Rows randRow(int i) //test method
         {
             switch (i)
             {
