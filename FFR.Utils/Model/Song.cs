@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Media;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +14,7 @@ namespace FFR.Utils
         public int Length { get; private set; }
         public Score BestScore { get; private set; }
         public List<Arrow> ArrowList { get; private set; }
+        public String Music { get; set; } //temp
 
         public Song()
         {
@@ -20,15 +23,27 @@ namespace FFR.Utils
             this.Length = -1;
             this.BestScore = new Score();
             this.ArrowList = null;
+            this.Music = "";
         }
 
-        public Song(String name, String artist, int length, Score bestScore, List<Arrow> arrowlist)
+        public Song(String name, String artist, int length, Score bestScore, List<Arrow> arrowlist, String song)
         {
             this.Name = name;
             this.Artist = artist;
             this.Length = length;
             this.BestScore = bestScore;
             this.ArrowList = arrowlist;
+            this.Music = song;
+        }
+
+        public void LoadContent(ContentManager content)
+        {
+            try
+            {
+                Microsoft.Xna.Framework.Media.Song song = content.Load<Microsoft.Xna.Framework.Media.Song>(Music);
+                MediaPlayer.Play(song);
+            }
+            catch (Exception) { }
         }
 
         public void ArrowMadnessTest()

@@ -29,6 +29,7 @@ namespace FFR
             arrowMadnessTest = new Song();
             arrowMadnessTest.ArrowMadnessTest();
             arrowReceptor.Initialize();
+            arrowMadnessTest.Music = "Songs\\Nyan";
             foreach (Arrow arrow in arrowMadnessTest.ArrowList)
             {
                 arrow.Initialize();
@@ -44,6 +45,7 @@ namespace FFR
             {
                 arrow.LoadContent(Content, arrow.ArrowColor.ToString());
             }
+            arrowMadnessTest.LoadContent(Content);
         }
 
         protected override void UnloadContent()
