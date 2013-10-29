@@ -7,6 +7,7 @@ namespace FFR.Utils
     {
         private int currentFrame;
         private int lastFrame = 0;
+        private int animationTimer = 0;
         public bool isKeyHit { get; set; }
 
         public ArrowReceptor() 
@@ -22,9 +23,11 @@ namespace FFR.Utils
 
         public override void Update(GameTime gameTime)
         {
-            if (isKeyHit)
+            animationTimer += gameTime.ElapsedGameTime.Milliseconds;
+            if (isKeyHit && animationTimer >= 2)
             {
-                currentFrame--;
+                currentFrame--; 
+                animationTimer = 0;
                 if (currentFrame == lastFrame)
                 {
                     currentFrame = 5;
