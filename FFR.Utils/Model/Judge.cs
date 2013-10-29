@@ -11,32 +11,48 @@ namespace FFR.Utils
     public class Judge: Sprite
     {
         public Accuracy ArrowAccuracy { get; set; }
+        public bool IsKeyHit { get; set; }
         public bool isVisible = false;
+        private int animationTimer = 0;
 
 
         public void Update(GameTime gameTime, Arrow nextArrow)
         {
-            isVisible = true;
-            try
+            if (IsKeyHit == true)
             {
-                if (65 <= (int)nextArrow.Position.Y && (int)nextArrow.Position.Y <= 105)
+                animationTimer = 0;
+                isVisible = true;
+                try
                 {
-                    ArrowAccuracy = Accuracy.Perfect;
-                    nextArrow.isArrowHit = true;
+                    if (65 <= (int)nextArrow.Position.Y && (int)nextArrow.Position.Y <= 105)
+                    {
+                        ArrowAccuracy = Accuracy.Perfect;
+                        nextArrow.isArrowHit = true;
+                    }
+                    else if ((106 <= (int)nextArrow.Position.Y && (int)nextArrow.Position.Y <= 125)
+                        || (45 <= (int)nextArrow.Position.Y && (int)nextArrow.Position.Y <= 64))
+                    {
+                        ArrowAccuracy = Accuracy.Great;
+                        nextArrow.isArrowHit = true;
+                    }
+                    else if ((126 <= (int)nextArrow.Position.Y && (int)nextArrow.Position.Y <= 149)
+                        || (21 <= (int)nextArrow.Position.Y && (int)nextArrow.Position.Y <= 44))
+                    {
+                        ArrowAccuracy = Accuracy.Good;
+                        nextArrow.isArrowHit = true;
+                    }
                 }
-                else if ((106 <= (int)nextArrow.Position.Y && (int)nextArrow.Position.Y <= 125)
-                    || (45 <= (int)nextArrow.Position.Y && (int)nextArrow.Position.Y <= 64))
+                catch (Exception) { }
+                finally { IsKeyHit = false; }
+            }
+            else
+            {
+                animationTimer += gameTime.ElapsedGameTime.Milliseconds;
+                if (animationTimer >= 50)
                 {
-                    ArrowAccuracy = Accuracy.Great;
-                    nextArrow.isArrowHit = true;
+                    isVisible = false;
                 }
-                else if ((126 <= (int)nextArrow.Position.Y && (int)nextArrow.Position.Y <= 149)
-                    || (21 <= (int)nextArrow.Position.Y && (int)nextArrow.Position.Y <= 44))
-                {
-                    ArrowAccuracy = Accuracy.Good;
-                    nextArrow.isArrowHit = true;
-                }
-            } catch(Exception) { }
+            }
         }
 
         public override void Draw(SpriteBatch spriteBatch, GameTime gamerTime)

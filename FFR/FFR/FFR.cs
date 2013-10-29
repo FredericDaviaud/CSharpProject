@@ -75,14 +75,11 @@ namespace FFR
         {
             KeyboardState newState = Keyboard.GetState();
             
-            arrowReceptorLeft.Update(gameTime);
-            arrowReceptorDown.Update(gameTime);
-            arrowReceptorUp.Update(gameTime);
-            arrowReceptorRight.Update(gameTime);
+            
 
             if (oldState.IsKeyUp(Keys.Left) && newState.IsKeyDown(Keys.Left))
             {
-                arrowReceptorLeft.isKeyHit = true;
+                arrowReceptorLeft.isKeyHit = judge.IsKeyHit = true;
                 Arrow nextArrow = arrowMadnessTest.ArrowList.Find(
                 delegate(Arrow arrow)
                 {
@@ -93,7 +90,7 @@ namespace FFR
             }
             if (oldState.IsKeyUp(Keys.Down) && newState.IsKeyDown(Keys.Down))
             {
-                arrowReceptorDown.isKeyHit = true;
+                arrowReceptorDown.isKeyHit = judge.IsKeyHit = true;
                 Arrow nextArrow = arrowMadnessTest.ArrowList.Find(
                 delegate(Arrow arrow)
                 {
@@ -104,7 +101,7 @@ namespace FFR
             }
             if (oldState.IsKeyUp(Keys.Up) && newState.IsKeyDown(Keys.Up))
             {
-                arrowReceptorUp.isKeyHit = true;
+                arrowReceptorUp.isKeyHit = judge.IsKeyHit = true;
                 Arrow nextArrow = arrowMadnessTest.ArrowList.Find(
                 delegate(Arrow arrow)
                 {
@@ -115,7 +112,7 @@ namespace FFR
             }
             if (oldState.IsKeyUp(Keys.Right) && newState.IsKeyDown(Keys.Right))
             {
-                arrowReceptorRight.isKeyHit = true;
+                arrowReceptorRight.isKeyHit = judge.IsKeyHit = true;
                 Arrow nextArrow = arrowMadnessTest.ArrowList.Find(
                 delegate(Arrow arrow)
                 {
@@ -124,6 +121,12 @@ namespace FFR
                 );
                 judge.Update(gameTime, nextArrow);
             }
+
+            arrowReceptorLeft.Update(gameTime);
+            arrowReceptorDown.Update(gameTime);
+            arrowReceptorUp.Update(gameTime);
+            arrowReceptorRight.Update(gameTime);
+            judge.Update(gameTime, null);
 
             foreach (Arrow arrow in arrowMadnessTest.ArrowList)
             {
