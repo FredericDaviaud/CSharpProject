@@ -42,8 +42,8 @@ namespace FFR.Utils
 
         public override void Update(GameTime gameTime)
         {
-            if (ArrowTime * 1000 > gameTime.TotalGameTime.TotalMilliseconds 
-                || Position.Y < 0) IsVisible = false;
+            if (ArrowTime * 1000 > gameTime.TotalGameTime.TotalMilliseconds
+                || Position.Y + Texture.Height / 2 < 0) IsVisible = false;
             else
             {
                 IsVisible = true;

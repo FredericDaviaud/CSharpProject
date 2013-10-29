@@ -9,7 +9,6 @@ namespace FFR
     public class FFR : Microsoft.Xna.Framework.Game
     {
         private ArrowReceptor arrowReceptor;
-        private Arrow arrowTest;
         private Song arrowMadnessTest;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
@@ -29,9 +28,7 @@ namespace FFR
             arrowReceptor = new ArrowReceptor();
             arrowMadnessTest = new Song();
             arrowMadnessTest.ArrowMadnessTest();
-            //arrowTest = new Arrow(ArrowColors.Yellow, Rows.Row1, 1);
             arrowReceptor.Initialize();
-            //arrowTest.Initialize();
             foreach (Arrow arrow in arrowMadnessTest.ArrowList)
             {
                 arrow.Initialize();
@@ -47,7 +44,6 @@ namespace FFR
             {
                 arrow.LoadContent(Content, arrow.ArrowColor.ToString());
             }
-            //arrowTest.LoadContent(Content, arrowTest.ArrowColor.ToString());
         }
 
         protected override void UnloadContent()
@@ -64,7 +60,6 @@ namespace FFR
             {
                 arrow.Update(gameTime);
             }
-                //arrowTest.Update(gameTime);
 
             base.Update(gameTime);
         }
@@ -80,7 +75,6 @@ namespace FFR
             {
                 arrow.Draw(spriteBatch, gameTime);
             }
-            //arrowTest.Draw(spriteBatch, gameTime);
 
             spriteBatch.End();
             base.Draw(gameTime);
