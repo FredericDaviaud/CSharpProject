@@ -10,6 +10,7 @@ namespace FFR
     {
         private ArrowReceptor arrowReceptor;
         private Arrow arrowTest;
+        private Song arrowMadnessTest;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
@@ -26,9 +27,15 @@ namespace FFR
         protected override void Initialize()
         {
             arrowReceptor = new ArrowReceptor();
-            arrowTest = new Arrow(ArrowColors.Yellow, Rows.Row1);
+            arrowMadnessTest = new Song();
+            arrowMadnessTest.ArrowMadnessTest();
+            //arrowTest = new Arrow(ArrowColors.Yellow, Rows.Row1, 1);
             arrowReceptor.Initialize();
-            arrowTest.Initialize();
+            //arrowTest.Initialize();
+            foreach (Arrow arrow in arrowMadnessTest.ArrowList)
+            {
+                arrow.Initialize();
+            }
             base.Initialize();
         }
 
@@ -36,7 +43,11 @@ namespace FFR
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             arrowReceptor.LoadContent(Content, "Arrows\\Receptor");
-            arrowTest.LoadContent(Content, arrowTest.ArrowColor.ToString());
+            foreach (Arrow arrow in arrowMadnessTest.ArrowList)
+            {
+                arrow.LoadContent(Content, arrow.ArrowColor.ToString());
+            }
+            //arrowTest.LoadContent(Content, arrowTest.ArrowColor.ToString());
         }
 
         protected override void UnloadContent()
@@ -49,7 +60,12 @@ namespace FFR
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            arrowTest.Update(gameTime);
+            foreach (Arrow arrow in arrowMadnessTest.ArrowList)
+            {
+                arrow.Update(gameTime);
+            }
+                //arrowTest.Update(gameTime);
+
             base.Update(gameTime);
         }
 
@@ -60,7 +76,11 @@ namespace FFR
             spriteBatch.Begin();
 
             arrowReceptor.Draw(spriteBatch, gameTime);
-            arrowTest.Draw(spriteBatch, gameTime);
+            foreach (Arrow arrow in arrowMadnessTest.ArrowList)
+            {
+                arrow.Draw(spriteBatch, gameTime);
+            }
+            //arrowTest.Draw(spriteBatch, gameTime);
 
             spriteBatch.End();
             base.Draw(gameTime);

@@ -10,24 +10,29 @@ namespace FFR.Utils
         public float Angle { get; private set; }
         public int ArrowRow { get; private set; }
         public string ArrowColor { get; private set; }
+        public float ArrowTime { get; private set; }
+        public bool IsVisible = true;
+        
 
         public Arrow() 
         {
             this.ArrowRow = (int) Rows.Row1; //default row
             this.ArrowColor = ArrowColors.Blue; //default color
+            this.ArrowTime = -1.0f; //default time
         }
 
-        public Arrow(string color, Rows row)
+        public Arrow(string color, Rows row, float time)
         {
             this.ArrowColor = color;
             this.ArrowRow = (int) row;
+            this.ArrowTime = time;
         }
 
         public override void Initialize()
         {
             Position = new Vector2(ArrowRow, int.Parse(ConfigurationManager.AppSettings["WINDOW_HEIGHT"]));
             Direction = Vector2.Normalize(new Vector2(0, 1));
-            Speed = 0.2f;
+            Speed = 0.5f;
         }
 
         public override void LoadContent(ContentManager content, string assetName)
@@ -37,17 +42,27 @@ namespace FFR.Utils
 
         public override void Update(GameTime gameTime)
         {
-            Position -= Direction * Speed * (float) gameTime.ElapsedGameTime.TotalMilliseconds;
+            if (ArrowTime * 1000 > gameTime.TotalGameTime.TotalMilliseconds 
+                || Position.Y < 0) IsVisible = false;
+            else
+            {
+                IsVisible = true;
+                Position -= Direction * Speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            }
         }
 
         public override void Draw(SpriteBatch spriteBatch, GameTime gamerTime)
         {
-            var Origin = new Vector2()
+            if (IsVisible)
             {
-                X = Texture.Width / 2,
-                Y = Texture.Height / 2
-            };
-            spriteBatch.Draw(Texture, Position, null, Color.White, arrowReceptorAngle(ArrowRow), Origin, 1.13f, SpriteEffects.None, 0f);
+                var Origin = new Vector2()
+                {
+                    X = Texture.Width / 2,
+                    Y = Texture.Height / 2
+                };
+                spriteBatch.Draw(Texture, Position, null, Color.White, arrowReceptorAngle(ArrowRow), Origin, 1.13f, SpriteEffects.None, 0f);
+
+            }
         }
 
         protected float arrowReceptorAngle(int i)
