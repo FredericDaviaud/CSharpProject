@@ -8,7 +8,7 @@ namespace FFR.Utils
     public class Arrow : Sprite
     {
         public float Angle { get; private set; }
-        public int ArrowRow { get; private set; }
+        public int ArrowRow { get; set; }
         public string ArrowColor { get; private set; }
         public float ArrowTime { get; private set; }
         public bool IsVisible = true;

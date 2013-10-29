@@ -8,8 +8,12 @@ namespace FFR
 {
     public class FFR : Microsoft.Xna.Framework.Game
     {
-        private ArrowReceptor arrowReceptor;
+        private ArrowReceptor arrowReceptorLeft;
+        private ArrowReceptor arrowReceptorDown;
+        private ArrowReceptor arrowReceptorUp;
+        private ArrowReceptor arrowReceptorRight;
         private Song arrowMadnessTest;
+        private KeyboardState oldState;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
@@ -25,11 +29,18 @@ namespace FFR
 
         protected override void Initialize()
         {
-            arrowReceptor = new ArrowReceptor();
+            arrowReceptorLeft = new ArrowReceptor(Rows.Row1);
+            arrowReceptorDown = new ArrowReceptor(Rows.Row2);
+            arrowReceptorUp = new ArrowReceptor(Rows.Row3);
+            arrowReceptorRight = new ArrowReceptor(Rows.Row4);
             arrowMadnessTest = new Song();
+
+            arrowReceptorLeft.Initialize();
+            arrowReceptorDown.Initialize();
+            arrowReceptorUp.Initialize();
+            arrowReceptorRight.Initialize();
             arrowMadnessTest.ArrowMadnessTest();
-            arrowReceptor.Initialize();
-            arrowMadnessTest.Music = "Songs\\Nyan";
+            //arrowMadnessTest.Music = "Songs\\Nyan";
             foreach (Arrow arrow in arrowMadnessTest.ArrowList)
             {
                 arrow.Initialize();
@@ -40,7 +51,10 @@ namespace FFR
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            arrowReceptor.LoadContent(Content, "Arrows\\Receptor");
+            arrowReceptorLeft.LoadContent(Content, "Animation\\ArrowReceptorSheet");
+            arrowReceptorDown.LoadContent(Content, "Animation\\ArrowReceptorSheet");
+            arrowReceptorUp.LoadContent(Content, "Animation\\ArrowReceptorSheet");
+            arrowReceptorRight.LoadContent(Content, "Animation\\ArrowReceptorSheet");
             foreach (Arrow arrow in arrowMadnessTest.ArrowList)
             {
                 arrow.LoadContent(Content, arrow.ArrowColor.ToString());
@@ -55,14 +69,35 @@ namespace FFR
 
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
-                this.Exit();
+            KeyboardState newState = Keyboard.GetState();
+            
+            arrowReceptorLeft.Update(gameTime);
+            arrowReceptorDown.Update(gameTime);
+            arrowReceptorUp.Update(gameTime);
+            arrowReceptorRight.Update(gameTime);
 
+            if (oldState.IsKeyUp(Keys.Left) && newState.IsKeyDown(Keys.Left))
+            {
+                arrowReceptorLeft.isKeyHit = true;
+            }
+            if (oldState.IsKeyUp(Keys.Down) && newState.IsKeyDown(Keys.Down))
+            {
+                arrowReceptorDown.isKeyHit = true;
+            }
+            if (oldState.IsKeyUp(Keys.Up) && newState.IsKeyDown(Keys.Up))
+            {
+                arrowReceptorUp.isKeyHit = true;
+            }
+            if (oldState.IsKeyUp(Keys.Right) && newState.IsKeyDown(Keys.Right))
+            {
+                arrowReceptorRight.isKeyHit = true;
+            }
             foreach (Arrow arrow in arrowMadnessTest.ArrowList)
             {
                 arrow.Update(gameTime);
             }
 
+            oldState = newState;
             base.Update(gameTime);
         }
 
@@ -72,7 +107,10 @@ namespace FFR
 
             spriteBatch.Begin();
 
-            arrowReceptor.Draw(spriteBatch, gameTime);
+            arrowReceptorLeft.Draw(spriteBatch, gameTime);
+            arrowReceptorDown.Draw(spriteBatch, gameTime);
+            arrowReceptorUp.Draw(spriteBatch, gameTime);
+            arrowReceptorRight.Draw(spriteBatch, gameTime);
             foreach (Arrow arrow in arrowMadnessTest.ArrowList)
             {
                 arrow.Draw(spriteBatch, gameTime);
