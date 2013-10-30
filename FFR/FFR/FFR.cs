@@ -74,59 +74,34 @@ namespace FFR
         protected override void Update(GameTime gameTime)
         {
             KeyboardState newState = Keyboard.GetState();
-            
-            
 
             if (oldState.IsKeyUp(Keys.Left) && newState.IsKeyDown(Keys.Left))
             {
-                arrowReceptorLeft.isKeyHit = judge.IsKeyHit = true;
-                Arrow nextArrow = arrowMadnessTest.ArrowList.Find(
-                delegate(Arrow arrow)
-                {
-                    return ((arrow.ArrowRow == (int) Rows.Row1) && (arrow.isVisible == true));
-                }
-                );
-                judge.Update(gameTime, nextArrow);
+                arrowReceptorLeft.isKeyHit = true;
+                judge.Update(arrowMadnessTest, Rows.Row1);
             }
             if (oldState.IsKeyUp(Keys.Down) && newState.IsKeyDown(Keys.Down))
             {
-                arrowReceptorDown.isKeyHit = judge.IsKeyHit = true;
-                Arrow nextArrow = arrowMadnessTest.ArrowList.Find(
-                delegate(Arrow arrow)
-                {
-                    return ((arrow.ArrowRow == (int)Rows.Row2) && (arrow.isVisible == true));
-                }
-                );
-                judge.Update(gameTime, nextArrow);
+                arrowReceptorDown.isKeyHit = true;
+                judge.Update(arrowMadnessTest, Rows.Row2);
             }
             if (oldState.IsKeyUp(Keys.Up) && newState.IsKeyDown(Keys.Up))
             {
-                arrowReceptorUp.isKeyHit = judge.IsKeyHit = true;
-                Arrow nextArrow = arrowMadnessTest.ArrowList.Find(
-                delegate(Arrow arrow)
-                {
-                    return ((arrow.ArrowRow == (int)Rows.Row3) && (arrow.isVisible == true));
-                }
-                );
-                judge.Update(gameTime, nextArrow);
+                arrowReceptorUp.isKeyHit = true;
+                judge.Update(arrowMadnessTest, Rows.Row3);
             }
             if (oldState.IsKeyUp(Keys.Right) && newState.IsKeyDown(Keys.Right))
             {
-                arrowReceptorRight.isKeyHit = judge.IsKeyHit = true;
-                Arrow nextArrow = arrowMadnessTest.ArrowList.Find(
-                delegate(Arrow arrow)
-                {
-                    return ((arrow.ArrowRow == (int)Rows.Row4) && (arrow.isVisible == true));
-                }
-                );
-                judge.Update(gameTime, nextArrow);
+                arrowReceptorRight.isKeyHit = true;
+                judge.Update(arrowMadnessTest, Rows.Row4);
             }
 
             arrowReceptorLeft.Update(gameTime);
             arrowReceptorDown.Update(gameTime);
             arrowReceptorUp.Update(gameTime);
             arrowReceptorRight.Update(gameTime);
-            judge.Update(gameTime, null);
+            judge.Update(arrowMadnessTest);
+            judge.Update(gameTime);
 
             foreach (Arrow arrow in arrowMadnessTest.ArrowList)
             {

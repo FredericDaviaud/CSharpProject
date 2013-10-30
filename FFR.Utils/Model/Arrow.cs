@@ -13,6 +13,7 @@ namespace FFR.Utils
         public float ArrowTime { get; private set; }
         public bool isVisible = true;
         public bool isArrowHit = false;
+        public bool isMissed = false;
         
 
         public Arrow() 
