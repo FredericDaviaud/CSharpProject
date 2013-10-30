@@ -42,7 +42,7 @@ namespace FFR.Utils
             {
                 if (nextArrow != null)
                 {
-                    checkIfArrowHit(nextArrow);
+                    checkIfArrowHit(song, nextArrow);
                 }
             }
             catch (Exception) { }
@@ -68,6 +68,7 @@ namespace FFR.Utils
                     isVisible = true;
                     ArrowAccuracy = Accuracy.Miss;
                     nextArrow.isMissed = true;
+                    song.Combo = 0;
                 }
             }
             catch (Exception) { }
@@ -104,24 +105,27 @@ namespace FFR.Utils
             }
         }
 
-        private void checkIfArrowHit(Arrow nextArrow)
+        private void checkIfArrowHit(Song song, Arrow nextArrow)
         {
             if (65 <= (int) nextArrow.Position.Y && (int) nextArrow.Position.Y <= 105)
             {
                 ArrowAccuracy = Accuracy.Perfect;
                 nextArrow.isArrowHit = true;
+                song.Combo += 1;
             }
             else if ((106 <= (int) nextArrow.Position.Y && (int) nextArrow.Position.Y <= 125)
                 || (31 <= (int) nextArrow.Position.Y && (int) nextArrow.Position.Y <= 64))
             {
                 ArrowAccuracy = Accuracy.Great;
                 nextArrow.isArrowHit = true;
+                song.Combo += 1;
             }
             else if ((126 <= (int) nextArrow.Position.Y && (int) nextArrow.Position.Y <= 149)
                 || (0 <= (int) nextArrow.Position.Y && (int) nextArrow.Position.Y <= 30))
             {
                 ArrowAccuracy = Accuracy.Good;
                 nextArrow.isArrowHit = true;
+                song.Combo += 1;
             }
         }
     }

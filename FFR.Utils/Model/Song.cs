@@ -16,8 +16,10 @@ namespace FFR.Utils
         public int Length { get; private set; }
         public Score Score { get; private set; }
         public List<Arrow> ArrowList { get; private set; }
+        public int Combo { get; set; }
         public String Music { get; set; } //temp
         private SpriteFont totalArrows;
+        private SpriteFont combo;
 
         public Song()
         {
@@ -44,6 +46,7 @@ namespace FFR.Utils
             try
             {
                 totalArrows = content.Load<SpriteFont>("Spritefonts\\TotalArrows");
+                combo = content.Load<SpriteFont>("Spritefonts\\TotalArrows");
                 Microsoft.Xna.Framework.Media.Song song = content.Load<Microsoft.Xna.Framework.Media.Song>(Music);
                 MediaPlayer.Play(song);
             }
@@ -53,13 +56,14 @@ namespace FFR.Utils
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.DrawString(totalArrows, string.Format("{0}", ArrowList.Count), new Vector2(600, 420), Color.White);
+            spriteBatch.DrawString(combo, string.Format("{0}", Combo), new Vector2(140, 420), Color.White);
         }
 
         public void ArrowMadnessTest() //test method
         {
             Random rand = new Random();
             ArrowList = new List<Arrow>();
-            for (float i = 0; i < 501; i++)
+            for (float i = 0; i < 500; i++)
             {
                 ArrowList.Add(new Arrow(randColor(rand.Next(8) + 1), randRow(rand.Next(4) + 1), i / 4));
             }
