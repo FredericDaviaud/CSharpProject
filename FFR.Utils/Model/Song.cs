@@ -1,4 +1,6 @@
-﻿using Microsoft.Xna.Framework.Content;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Media;
 using System;
 using System.Collections.Generic;
@@ -15,6 +17,7 @@ namespace FFR.Utils
         public Score Score { get; private set; }
         public List<Arrow> ArrowList { get; private set; }
         public String Music { get; set; } //temp
+        private SpriteFont totalArrows;
 
         public Song()
         {
@@ -40,10 +43,16 @@ namespace FFR.Utils
         {
             try
             {
+                totalArrows = content.Load<SpriteFont>("Spritefonts\\TotalArrows");
                 Microsoft.Xna.Framework.Media.Song song = content.Load<Microsoft.Xna.Framework.Media.Song>(Music);
                 MediaPlayer.Play(song);
             }
             catch (Exception) { }
+        }
+
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            spriteBatch.DrawString(totalArrows, string.Format("{0}", ArrowList.Count), new Vector2(600, 420), Color.White);
         }
 
         public void ArrowMadnessTest() //test method

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Graphics;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +15,7 @@ namespace FFR.Utils
         public int AverageCount { get; set; }
         public int MissCount { get; set; }
         public int Combo { get; set; }
+        private SpriteFont font;
 
         public Score()
         {
@@ -28,6 +32,16 @@ namespace FFR.Utils
             this.GoodCount = goodCount;
             this.AverageCount = averageCount;
             this.MissCount = missCount;
+        }
+
+        public virtual void LoadContent(ContentManager content, string assetName)
+        {
+            font = content.Load<SpriteFont>("Spritefonts\\TotalArrows");
+        }
+
+        public virtual void Draw(SpriteBatch spriteBatch, GameTime gameTime)
+        {
+          //  spriteBatch.Draw(font, , Color.White);
         }
 
         private int getScoreValue()

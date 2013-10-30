@@ -59,6 +59,7 @@ namespace FFR
             arrowReceptorUp.LoadContent(Content, "Animation\\ArrowReceptorSheet");
             arrowReceptorRight.LoadContent(Content, "Animation\\ArrowReceptorSheet");
             judge.LoadContent(Content, "Judge\\Judge");
+            arrowMadnessTest.LoadContent(Content);
             foreach (Arrow arrow in arrowMadnessTest.ArrowList)
             {
                 arrow.LoadContent(Content, arrow.ArrowColor.ToString());
@@ -123,6 +124,7 @@ namespace FFR
             arrowReceptorUp.Draw(spriteBatch, gameTime);
             arrowReceptorRight.Draw(spriteBatch, gameTime);
             judge.Draw(spriteBatch, gameTime);
+            arrowMadnessTest.Draw(spriteBatch);
             foreach (Arrow arrow in arrowMadnessTest.ArrowList)
             {
                 arrow.Draw(spriteBatch, gameTime);
