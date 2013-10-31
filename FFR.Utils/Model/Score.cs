@@ -39,11 +39,6 @@ namespace FFR.Utils
             font = content.Load<SpriteFont>("Spritefonts\\TotalArrows");
         }
 
-        public virtual void Draw(SpriteBatch spriteBatch, GameTime gameTime)
-        {
-          //  spriteBatch.Draw(font, , Color.White);
-        }
-
         private int getScoreValue()
         {
             return PerfectCount * 50 + GoodCount * 25 + AverageCount * 10 - MissCount * 5;

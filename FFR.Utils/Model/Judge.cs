@@ -14,15 +14,6 @@ namespace FFR.Utils
         public bool isVisible = false;
         private int animationTimer = 0;
 
-        public override void Update(GameTime gameTime)
-        {
-            animationTimer += gameTime.ElapsedGameTime.Milliseconds;
-            if (animationTimer >= 100)
-            {
-                isVisible = false;
-            }
-        }
-
         public void Update(Song song, Rows row)
         {
             animationTimer = 0;
@@ -46,10 +37,9 @@ namespace FFR.Utils
                 }
             }
             catch (Exception) { }
-
         }
 
-        public void Update(Song song)
+        public void UpdateMiss(Song song)
         {
             
             Arrow nextArrow = song.ArrowList.Find(
@@ -74,7 +64,14 @@ namespace FFR.Utils
             catch (Exception) { }
         }
 
-        
+        public void UpdateSpriteTimer(GameTime gameTime)
+        {
+            animationTimer += gameTime.ElapsedGameTime.Milliseconds;
+            if (animationTimer >= 100)
+            {
+                isVisible = false;
+            }
+        }
 
         public override void Draw(SpriteBatch spriteBatch, GameTime gamerTime)
         {

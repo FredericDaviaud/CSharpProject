@@ -101,8 +101,8 @@ namespace FFR
             arrowReceptorDown.Update(gameTime);
             arrowReceptorUp.Update(gameTime);
             arrowReceptorRight.Update(gameTime);
-            judge.Update(arrowMadnessTest);
-            judge.Update(gameTime);
+            judge.UpdateMiss(arrowMadnessTest);
+            judge.UpdateSpriteTimer(gameTime);
 
             foreach (Arrow arrow in arrowMadnessTest.ArrowList)
             {
