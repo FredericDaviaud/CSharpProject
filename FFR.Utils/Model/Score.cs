@@ -11,17 +11,17 @@ namespace FFR.Utils
     public class Score
     {
         public int PerfectCount { get; set; }
+        public int GreatCount { get; set; }
         public int GoodCount { get; set; }
-        public int AverageCount { get; set; }
         public int MissCount { get; set; }
         public int Combo { get; set; }
-        private SpriteFont font;
+        private SpriteFont score;
 
         public Score()
         {
             this.PerfectCount = 0;
+            this.GreatCount = 0;
             this.GoodCount = 0;
-            this.AverageCount = 0;
             this.MissCount = 0;
             this.Combo = 0;
         }
@@ -29,19 +29,24 @@ namespace FFR.Utils
         public Score(int perfectCount, int goodCount, int averageCount, int missCount)
         {
             this.PerfectCount = perfectCount;
-            this.GoodCount = goodCount;
-            this.AverageCount = averageCount;
+            this.GreatCount = goodCount;
+            this.GoodCount = averageCount;
             this.MissCount = missCount;
         }
 
-        public virtual void LoadContent(ContentManager content, string assetName)
+        public void LoadContent(ContentManager content)
         {
-            font = content.Load<SpriteFont>("Spritefonts\\TotalArrows");
+            score = content.Load<SpriteFont>("Spritefonts\\DefaultFont");
+        }
+
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            spriteBatch.DrawString(score, string.Format("{0}", getScoreValue()), new Vector2(140, 350), Color.White);
         }
 
         private int getScoreValue()
         {
-            return PerfectCount * 50 + GoodCount * 25 + AverageCount * 10 - MissCount * 5;
+            return PerfectCount * 50 + GreatCount * 25 + GoodCount * 10 - MissCount * 5;
         }
     }
 }

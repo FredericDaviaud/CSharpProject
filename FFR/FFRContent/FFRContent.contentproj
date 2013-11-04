@@ -120,8 +120,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Spritefonts\TotalArrows.spritefont">
-      <Name>TotalArrows</Name>
+    <Compile Include="Spritefonts\DefaultFont.spritefont">
+      <Name>DefaultFont</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>

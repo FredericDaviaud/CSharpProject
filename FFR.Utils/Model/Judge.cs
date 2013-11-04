@@ -61,6 +61,7 @@ namespace FFR.Utils
                     ArrowAccuracy = Accuracy.Miss;
                     nextArrow.isMissed = true;
                     song.Combo = 0;
+                    song.Score.MissCount += 1;
                 }
             }
             catch (Exception) { }
@@ -111,6 +112,7 @@ namespace FFR.Utils
                 ArrowAccuracy = Accuracy.Perfect;
                 nextArrow.isArrowHit = true;
                 song.Combo += 1;
+                song.Score.PerfectCount += 1;
             }
             else if ((106 <= (int) nextArrow.Position.Y && (int) nextArrow.Position.Y <= 125)
                 || (31 <= (int) nextArrow.Position.Y && (int) nextArrow.Position.Y <= 64))
@@ -118,6 +120,7 @@ namespace FFR.Utils
                 ArrowAccuracy = Accuracy.Great;
                 nextArrow.isArrowHit = true;
                 song.Combo += 1;
+                song.Score.GreatCount += 1;
             }
             else if ((126 <= (int) nextArrow.Position.Y && (int) nextArrow.Position.Y <= 149)
                 || (0 <= (int) nextArrow.Position.Y && (int) nextArrow.Position.Y <= 30))
@@ -125,6 +128,7 @@ namespace FFR.Utils
                 ArrowAccuracy = Accuracy.Good;
                 nextArrow.isArrowHit = true;
                 song.Combo += 1;
+                song.Score.GoodCount += 1;
             }
         }
     }

@@ -43,8 +43,9 @@ namespace FFR.Utils
         {
             try
             {
-                totalArrows = content.Load<SpriteFont>("Spritefonts\\TotalArrows");
-                combo = content.Load<SpriteFont>("Spritefonts\\TotalArrows");
+                totalArrows = content.Load<SpriteFont>("Spritefonts\\DefaultFont");
+                combo = content.Load<SpriteFont>("Spritefonts\\DefaultFont");
+                this.Score.LoadContent(content);
                 Microsoft.Xna.Framework.Media.Song song = content.Load<Microsoft.Xna.Framework.Media.Song>(Music);
                 MediaPlayer.Play(song);
             }
@@ -55,6 +56,7 @@ namespace FFR.Utils
         {
             spriteBatch.DrawString(totalArrows, string.Format("{0}", ArrowList.Count), new Vector2(600, 420), Color.White);
             spriteBatch.DrawString(combo, string.Format("{0}", Combo), new Vector2(140, 420), Color.White);
+            this.Score.Draw(spriteBatch);
         }
 
         public void ArrowMadnessTest() //test method
