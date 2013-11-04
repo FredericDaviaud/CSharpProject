@@ -16,27 +16,30 @@ namespace FFR.Utils
 
         public void Update(Song song, Rows row)
         {
-            animationTimer = 0;
-            isVisible = true;
-
-            Arrow nextArrow = song.ArrowList.Find(
-                delegate(Arrow arrow)
-                {
-                    return ((arrow.ArrowRow == (int)row) 
-                        && (arrow.Position.Y >= 0) 
-                        && (arrow.Position.Y <= 149) 
-                        && arrow.isVisible);
-                }
-                );
-
-            try
+            if (ArrowAccuracy != Accuracy.Miss)
             {
-                if (nextArrow != null)
+                animationTimer = 0;
+                isVisible = true;
+
+                Arrow nextArrow = song.ArrowList.Find(
+                    delegate(Arrow arrow)
+                    {
+                        return ((arrow.ArrowRow == (int)row)
+                            && (arrow.Position.Y >= 0)
+                            && (arrow.Position.Y <= 149)
+                            && arrow.isVisible);
+                    }
+                    );
+
+                try
                 {
-                    checkIfArrowHit(song, nextArrow);
+                    if (nextArrow != null)
+                    {
+                        checkIfArrowHit(song, nextArrow);
+                    }
                 }
+                catch (Exception) { }
             }
-            catch (Exception) { }
         }
 
         public void UpdateMiss(Song song)
