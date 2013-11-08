@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using FFR.Parser;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Media;
@@ -13,7 +14,7 @@ namespace FFR.Utils
         public String Artist { get; private set; }
         public int Length { get; private set; }
         public Score Score { get; private set; }
-        public List<Arrow> ArrowList { get; private set; }
+        public List<Arrow> ArrowList { get; set; }
         public int Combo { get; set; }
         public String Music { get; set; } //temp
         private SpriteFont totalArrows;
@@ -39,6 +40,16 @@ namespace FFR.Utils
             this.Music = song;
         }
 
+        public void Initialize()
+        {
+            SongParser parser = new SongParser();
+            ArrowList = parser.parse("Songs\\Almost There.sm");
+            foreach (Arrow arrow in ArrowList)
+            {
+                arrow.Initialize();
+            }
+        }
+
         public void LoadContent(ContentManager content)
         {
             try
@@ -50,10 +61,28 @@ namespace FFR.Utils
                 MediaPlayer.Play(song);
             }
             catch (Exception) { }
+
+            foreach (Arrow arrow in ArrowList)
+            {
+                arrow.LoadContent(content, arrow.ArrowColor.ToString());
+            }
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Update(GameTime gameTime)
         {
+            foreach (Arrow arrow in ArrowList)
+            {
+                arrow.Update(gameTime);
+            }
+        }
+
+        public void Draw(SpriteBatch spriteBatch, GameTime gameTime)
+        {
+            foreach (Arrow arrow in ArrowList)
+            {
+                arrow.Draw(spriteBatch, gameTime);
+            }
+
             spriteBatch.DrawString(totalArrows, string.Format("{0}", ArrowList.Count), new Vector2(600, 420), Color.White);
             spriteBatch.DrawString(combo, string.Format("{0}", Combo), new Vector2(140, 420), Color.White);
             this.Score.Draw(spriteBatch);

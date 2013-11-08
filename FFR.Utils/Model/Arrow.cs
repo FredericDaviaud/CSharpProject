@@ -34,7 +34,7 @@ namespace FFR.Utils
         {
             Position = new Vector2(ArrowRow, int.Parse(ConfigurationManager.AppSettings["WINDOW_HEIGHT"]));
             Direction = Vector2.Normalize(new Vector2(0, 1));
-            Speed = 0.5f;
+            Speed = 0.8f;
         }
 
         public override void LoadContent(ContentManager content, string assetName)
