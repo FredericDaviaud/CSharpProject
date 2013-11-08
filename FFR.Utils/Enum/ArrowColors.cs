@@ -10,5 +10,6 @@
         public static string Purple = "Arrows\\Purple";
         public static string Yellow = "Arrows\\Yellow";
         public static string Red = "Arrows\\Red";
+        public static string White = "Arrows\\White";
     }
 }

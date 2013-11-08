@@ -21,6 +21,7 @@ namespace FFR.Parser
         public float SongOffset { get; private set; }
         public List<Arrow> ArrowList { get; set; }
         private Mp3FileReader reader;
+        private String arrowColor;
         TimeSpan duration;
 
 
@@ -81,10 +82,10 @@ namespace FFR.Parser
                 for (int i = 0; i < mesureList[mesureId].size; i++)
                 {
                     text = streamReader.ReadLine();
-                    if (text.Substring(0, 1).Equals("1") || text.Substring(0, 1).Equals("2")) ArrowList.Add(new Arrow(getArrowColor(), Rows.Row1, time));
-                    if (text.Substring(1, 1).Equals("1") || text.Substring(1, 1).Equals("2")) ArrowList.Add(new Arrow(getArrowColor(), Rows.Row2, time));
-                    if (text.Substring(2, 1).Equals("1") || text.Substring(2, 1).Equals("2")) ArrowList.Add(new Arrow(getArrowColor(), Rows.Row3, time));
-                    if (text.Substring(3, 1).Equals("1") || text.Substring(3, 1).Equals("2")) ArrowList.Add(new Arrow(getArrowColor(), Rows.Row4, time));
+                    if (text.Substring(0, 1).Equals("1") || text.Substring(0, 1).Equals("2")) ArrowList.Add(new Arrow(getArrowColor(mesureList[mesureId], i + 1), Rows.Row1, time));
+                    if (text.Substring(1, 1).Equals("1") || text.Substring(1, 1).Equals("2")) ArrowList.Add(new Arrow(getArrowColor(mesureList[mesureId], i + 1), Rows.Row2, time));
+                    if (text.Substring(2, 1).Equals("1") || text.Substring(2, 1).Equals("2")) ArrowList.Add(new Arrow(getArrowColor(mesureList[mesureId], i + 1), Rows.Row3, time));
+                    if (text.Substring(3, 1).Equals("1") || text.Substring(3, 1).Equals("2")) ArrowList.Add(new Arrow(getArrowColor(mesureList[mesureId], i + 1), Rows.Row4, time));
                     time += ((float) duration.TotalMilliseconds / 1000) / mesureList.Count / mesureList[mesureId].size;
                 }
                 streamReader.ReadLine();
@@ -94,11 +95,79 @@ namespace FFR.Parser
             return ArrowList;
         }
 
-        private String getArrowColor()
+        private String getArrowColor(Mesure mesure, int note)
         {
+            if (note > (mesure.size * 3 / 4)) note -= (mesure.size * 3 / 4);
+            else if (note > (mesure.size / 2)) note -= mesure.size / 2;
+            else if (note > (mesure.size / 4)) note -= mesure.size / 4;
 
+            if (note == 1) return ArrowColors.Red;
+            if (mesure.size / 8 + 1 == note) return ArrowColors.Blue;
+            switch (mesure.size)
+            {
+                case 16: arrowColor = ArrowColors.Yellow;
+                    break;
+                case 12: arrowColor = ArrowColors.Purple;
+                    break;
+                case 24: arrowColor = get24thColor(note);
+                    break;
+                case 32: arrowColor = get32thColor(note);
+                    break;
+                case 48: arrowColor = get48thColor(note);
+                    break;
+                case 64: arrowColor = get64thColor(note);
+                    break;
+                case 96: arrowColor = get96thColor(note);
+                    break;
+                case 192: arrowColor = get192thColor(note);
+                    break;
+            }
+            return arrowColor;
+        }
 
-            return ArrowColors.Blue;
+        private String get24thColor(int note)
+        {
+            if (note == 2 || note == 6) return ArrowColors.Pink;
+            else return ArrowColors.Purple;
+        }
+
+        private String get32thColor(int note)
+        {
+            if (note == 3 || note == 7) return ArrowColors.Yellow;
+            else return ArrowColors.Orange;
+        }
+
+        private String get48thColor(int note)
+        {
+            if (note == 3 || note == 11) return ArrowColors.Pink;
+            else if (note == 4 || note == 10) return ArrowColors.Yellow;
+            else if (note == 5 || note == 9) return ArrowColors.Purple;
+            else return ArrowColors.Cyan;
+        }
+
+        private String get64thColor(int note)
+        {
+            if (note == 5 || note == 13) return ArrowColors.Yellow;
+            else if (note == 4 || note == 8 || note == 12 || note == 16) return ArrowColors.Orange;
+            else return ArrowColors.Green;
+        }
+
+        private String get96thColor(int note)
+        {
+            if (note == 3 || note == 11) return ArrowColors.Yellow;
+            else if (note == 5 || note == 21) return ArrowColors.Pink;
+            else if (note == 9 || note == 17) return ArrowColors.Purple;
+            else if (note == 3 || note == 11 || note == 15 || note == 23) return ArrowColors.Cyan;
+            else return ArrowColors.White;
+        }
+
+        private String get192thColor(int note)
+        {
+            if (note == 13 || note == 37) return ArrowColors.Yellow;
+            else if (note == 9 || note == 41) return ArrowColors.Pink;
+            else if (note == 17 || note == 33) return ArrowColors.Purple;
+            else if (note == 5 || note == 21 || note == 29 || note == 45) return ArrowColors.Cyan;
+            else return ArrowColors.White;
         }
     }
 }
