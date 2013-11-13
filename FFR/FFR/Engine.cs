@@ -87,6 +87,10 @@ namespace FFR
                 arrowReceptorRight.isKeyHit = true;
                 judge.Update(song, Rows.Row4);
             }
+            if (oldState.IsKeyUp(Keys.P) && newState.IsKeyDown(Keys.P))
+            {
+                //TODO
+            }
 
             arrowReceptorLeft.Update(gameTime);
             arrowReceptorDown.Update(gameTime);

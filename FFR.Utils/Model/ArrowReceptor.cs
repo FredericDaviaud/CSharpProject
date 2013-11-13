@@ -20,8 +20,8 @@ namespace FFR.Utils
 
         public override void Update(GameTime gameTime)
         {
-            animationTimer += gameTime.ElapsedGameTime.Milliseconds;
-            if (isKeyHit && animationTimer >= 2)
+            animationTimer += (int) gameTime.ElapsedGameTime.Ticks;
+            if (isKeyHit && animationTimer >= 200000)
             {
                 currentFrame--; 
                 animationTimer = 0;
