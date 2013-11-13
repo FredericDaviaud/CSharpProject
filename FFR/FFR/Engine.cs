@@ -19,10 +19,10 @@ namespace FFR
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        public const Keys KEY_LEFT =  Keys.Left;
-        public const Keys KEY_DOWN =  Keys.Down;
-        public const Keys KEY_UP =    Keys.Up;
-        public const Keys KEY_RIGHT = Keys.Right;
+        public const Keys KEY_LEFT =  Keys.S;
+        public const Keys KEY_DOWN =  Keys.D;
+        public const Keys KEY_UP =    Keys.J;
+        public const Keys KEY_RIGHT = Keys.K;
 
         public Engine()
         {

@@ -104,23 +104,23 @@ namespace FFR.Utils
 
         private void checkIfArrowHit(Song song, Arrow nextArrow)
         {
-            if (65 <= (int) nextArrow.Position.Y && (int) nextArrow.Position.Y <= 105)
+            if (45 <= (int) nextArrow.Position.Y && (int) nextArrow.Position.Y <= 125)
             {
                 ArrowAccuracy = Accuracy.Perfect;
                 nextArrow.isArrowHit = true;
                 song.Combo += 1;
                 song.Score.PerfectCount += 1;
             }
-            else if ((106 <= (int) nextArrow.Position.Y && (int) nextArrow.Position.Y <= 125)
-                || (31 <= (int) nextArrow.Position.Y && (int) nextArrow.Position.Y <= 64))
+            else if ((126 <= (int) nextArrow.Position.Y && (int) nextArrow.Position.Y <= 150)
+                || (20 <= (int) nextArrow.Position.Y && (int) nextArrow.Position.Y <= 44))
             {
                 ArrowAccuracy = Accuracy.Great;
                 nextArrow.isArrowHit = true;
                 song.Combo += 1;
                 song.Score.GreatCount += 1;
             }
-            else if ((126 <= (int) nextArrow.Position.Y && (int) nextArrow.Position.Y <= 149)
-                || (0 <= (int) nextArrow.Position.Y && (int) nextArrow.Position.Y <= 30))
+            else if ((151 <= (int) nextArrow.Position.Y && (int) nextArrow.Position.Y <= 175)
+                || (0 <= (int) nextArrow.Position.Y && (int) nextArrow.Position.Y <= 19))
             {
                 ArrowAccuracy = Accuracy.Good;
                 nextArrow.isArrowHit = true;

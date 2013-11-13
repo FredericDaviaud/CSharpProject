@@ -22,7 +22,6 @@ namespace FFR.Utils
         
         private SpriteFont totalArrows;
         private SpriteFont combo;
-        private int timer;
         private bool isSongStarted = false;
 
         public Song()
