@@ -17,7 +17,6 @@ namespace FFR.Parser
         private String arrowColor;
         TimeSpan duration;
 
-
         public List<Arrow> parse(String filePath)
         {
             string text;
@@ -98,9 +97,9 @@ namespace FFR.Parser
             if (mesure.size / 8 + 1 == note) return ArrowColors.Blue;
             switch (mesure.size)
             {
-                case 16: arrowColor = ArrowColors.Yellow;
-                    break;
                 case 12: arrowColor = ArrowColors.Purple;
+                    break;
+                case 16: arrowColor = ArrowColors.Yellow;
                     break;
                 case 24: arrowColor = get24thColor(note);
                     break;

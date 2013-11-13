@@ -15,6 +15,7 @@ namespace FFR.Utils
         public bool isVisible = true;
         public bool isArrowHit = false;
         public bool isMissed = false;
+        public const float ARROW_SPEED = 0.8f;
         
 
         public Arrow() 
@@ -35,7 +36,7 @@ namespace FFR.Utils
         {
             Position = new Vector2(ArrowRow, int.Parse(ConfigurationManager.AppSettings["WINDOW_HEIGHT"]));
             Direction = Vector2.Normalize(new Vector2(0, 1));
-            Speed = 0.8f;
+            Speed = ARROW_SPEED;
         }
 
         public override void LoadContent(ContentManager content, string assetName)
