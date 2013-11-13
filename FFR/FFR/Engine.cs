@@ -19,6 +19,11 @@ namespace FFR
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        public const Keys KEY_LEFT =  Keys.Left;
+        public const Keys KEY_DOWN =  Keys.Down;
+        public const Keys KEY_UP =    Keys.Up;
+        public const Keys KEY_RIGHT = Keys.Right;
+
         public Engine()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -67,22 +72,22 @@ namespace FFR
         {
             KeyboardState newState = Keyboard.GetState();
 
-            if (oldState.IsKeyUp(Keys.Left) && newState.IsKeyDown(Keys.Left))
+            if (oldState.IsKeyUp(KEY_LEFT) && newState.IsKeyDown(KEY_LEFT))
             {
                 arrowReceptorLeft.isKeyHit = true;
                 judge.Update(song, Rows.Row1);
             }
-            if (oldState.IsKeyUp(Keys.Down) && newState.IsKeyDown(Keys.Down))
+            if (oldState.IsKeyUp(KEY_DOWN) && newState.IsKeyDown(KEY_DOWN))
             {
                 arrowReceptorDown.isKeyHit = true;
                 judge.Update(song, Rows.Row2);
             }
-            if (oldState.IsKeyUp(Keys.Up) && newState.IsKeyDown(Keys.Up))
+            if (oldState.IsKeyUp(KEY_UP) && newState.IsKeyDown(KEY_UP))
             {
                 arrowReceptorUp.isKeyHit = true;
                 judge.Update(song, Rows.Row3);
             }
-            if (oldState.IsKeyUp(Keys.Right) && newState.IsKeyDown(Keys.Right))
+            if (oldState.IsKeyUp(KEY_RIGHT) && newState.IsKeyDown(KEY_RIGHT))
             {
                 arrowReceptorRight.isKeyHit = true;
                 judge.Update(song, Rows.Row4);
@@ -117,7 +122,6 @@ namespace FFR
             judge.Draw(spriteBatch, gameTime);
             song.Draw(spriteBatch, gameTime);
             
-
             spriteBatch.End();
             base.Draw(gameTime);
         }

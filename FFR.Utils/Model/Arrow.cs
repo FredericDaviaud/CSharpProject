@@ -8,9 +8,10 @@ namespace FFR.Utils
     public class Arrow : Sprite
     {
         public float Angle { get; private set; }
+        public float ArrowTime { get; private set; }
         public int ArrowRow { get; set; }
         public string ArrowColor { get; private set; }
-        public float ArrowTime { get; private set; }
+        
         public bool isVisible = true;
         public bool isArrowHit = false;
         public bool isMissed = false;
@@ -18,9 +19,9 @@ namespace FFR.Utils
 
         public Arrow() 
         {
-            this.ArrowRow = (int) Rows.Row1; //default row
-            this.ArrowColor = ArrowColors.Blue; //default color
-            this.ArrowTime = -1.0f; //default time
+            this.ArrowRow = (int) Rows.Row1;
+            this.ArrowColor = ArrowColors.Blue; 
+            this.ArrowTime = -1.0f; 
         }
 
         public Arrow(string color, Rows row, float time)

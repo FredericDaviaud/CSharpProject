@@ -1,16 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.GamerServices;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
-using System.IO;
 using FFR.Utils;
 using NAudio.Wave;
+using System;
+using System.Collections.Generic;
+using System.IO;
 
 namespace FFR.Parser
 {
@@ -20,6 +12,7 @@ namespace FFR.Parser
         public String SongArtist { get; private set; }
         public float SongOffset { get; private set; }
         public List<Arrow> ArrowList { get; set; }
+        
         private Mp3FileReader reader;
         private String arrowColor;
         TimeSpan duration;
