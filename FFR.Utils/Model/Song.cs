@@ -15,10 +15,14 @@ namespace FFR.Utils
         public int Length { get; private set; }
         public Score Score { get; private set; }
         public List<Arrow> ArrowList { get; set; }
+        public float Offset { get; set; }
+        public Microsoft.Xna.Framework.Media.Song SongFile { get; set; }
         public int Combo { get; set; }
         public String Music { get; set; } //temp
         private SpriteFont totalArrows;
         private SpriteFont combo;
+        private int timer;
+        private bool isSongStarted = false;
 
         public Song()
         {
@@ -44,6 +48,8 @@ namespace FFR.Utils
         {
             SongParser parser = new SongParser();
             ArrowList = parser.parse("Songs\\Almost There.sm");
+            Offset = parser.SongOffset;
+
             foreach (Arrow arrow in ArrowList)
             {
                 arrow.Initialize();
@@ -57,11 +63,12 @@ namespace FFR.Utils
                 totalArrows = content.Load<SpriteFont>("Spritefonts\\DefaultFont");
                 combo = content.Load<SpriteFont>("Spritefonts\\DefaultFont");
                 this.Score.LoadContent(content);
-                Microsoft.Xna.Framework.Media.Song song = content.Load<Microsoft.Xna.Framework.Media.Song>(Music);
-                MediaPlayer.Play(song);
+                
             }
-            catch (Exception) { }
+            catch (ArgumentNullException) { }
 
+            SongFile = content.Load<Microsoft.Xna.Framework.Media.Song>("Songs\\Almost There");
+            
             foreach (Arrow arrow in ArrowList)
             {
                 arrow.LoadContent(content, arrow.ArrowColor.ToString());
@@ -70,6 +77,16 @@ namespace FFR.Utils
 
         public void Update(GameTime gameTime)
         {
+            if (!isSongStarted)
+            {
+                //timer += gameTime.ElapsedGameTime.Milliseconds;
+                if (gameTime.TotalGameTime.Seconds * 1000
+                    + gameTime.TotalGameTime.Milliseconds >= 1200)
+                {
+                    MediaPlayer.Play(SongFile);
+                    isSongStarted = true;
+                }
+            }
             foreach (Arrow arrow in ArrowList)
             {
                 arrow.Update(gameTime);

@@ -11,11 +11,8 @@ namespace FFR
             using (Engine game = new Engine())
             {
                 game.Run();
-                //SongParser parser = new SongParser();
-                //parser.parse("C:\\Users\\Fred\\Documents\\Visual Studio 2012\\Projects\\FFRParser\\giga.sm");
             }
         }
     }
 #endif
 }
-
