@@ -119,13 +119,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Songs\Computer Music.mp3">
-      <Name>Computer Music</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Songs\SMB End Harder.mp3">
       <Name>SMB End Harder</Name>
       <Importer>Mp3Importer</Importer>

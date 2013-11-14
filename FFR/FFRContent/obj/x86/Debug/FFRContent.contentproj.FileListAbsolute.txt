@@ -1,0 +1,2 @@
+C:\Users\Fred\Source\Repos\CSharpProject\FFR\FFRContent\obj\x86\Debug\FFRContent.contentprojResolveAssemblyReference.cache
+C:\Users\Fred\Source\Save\CSharpProject\FFR\FFRContent\obj\x86\Debug\FFRContent.contentprojResolveAssemblyReference.cache

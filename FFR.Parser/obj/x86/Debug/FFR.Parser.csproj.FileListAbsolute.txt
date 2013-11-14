@@ -1,0 +1,10 @@
+C:\Users\Fred\Source\Repos\CSharpProject\FFR.Parser\obj\x86\Debug\FFR.Parser.csprojResolveAssemblyReference.cache
+C:\Users\Fred\Source\Repos\CSharpProject\FFR.Parser\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Fred\Source\Repos\CSharpProject\FFR.Parser\bin\x86\Debug\FFR.Parser.dll
+C:\Users\Fred\Source\Repos\CSharpProject\FFR.Parser\bin\x86\Debug\FFR.Parser.pdb
+C:\Users\Fred\Source\Repos\CSharpProject\FFR.Parser\obj\x86\Debug\FFR.Parser.dll
+C:\Users\Fred\Source\Repos\CSharpProject\FFR.Parser\obj\x86\Debug\FFR.Parser.pdb
+C:\Users\Fred\Source\Repos\CSharpProject\FFR.Parser\bin\x86\Debug\FFR.Utils.dll
+C:\Users\Fred\Source\Repos\CSharpProject\FFR.Parser\bin\x86\Debug\FFR.Utils.pdb
+C:\Users\Fred\Source\Repos\CSharpProject\FFR.Parser\bin\x86\Debug\NAudio.dll
+C:\Users\Fred\Source\Repos\CSharpProject\FFR.Parser\bin\x86\Debug\NAudio.xml

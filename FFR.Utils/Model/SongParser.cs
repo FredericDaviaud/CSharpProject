@@ -15,7 +15,7 @@ namespace FFR.Parser
         
         private Mp3FileReader reader;
         private String arrowColor;
-        private const String SONG_PATH = "Songs\\SMB Forest Funk.mp3"; //Until Menu is added...
+        private const String SONG_PATH = "Songs\\Almost There.mp3"; //Until Menu is added...
         TimeSpan duration;
 
         /// <summary>

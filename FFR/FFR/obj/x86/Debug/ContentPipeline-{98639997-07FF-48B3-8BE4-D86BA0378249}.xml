@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>Arrows\Blue.png</Source>
+      <Name>Arrows\Blue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Arrows\Blue.xnb</Output>
+      <Time>2013-10-27T14:30:07.199672+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Arrows\Cyan.png</Source>
+      <Name>Arrows\Cyan</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Arrows\Cyan.xnb</Output>
+      <Time>2013-10-27T14:30:07.2126727+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Arrows\Green.png</Source>
+      <Name>Arrows\Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Arrows\Green.xnb</Output>
+      <Time>2013-10-27T14:30:07.2206732+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Arrows\Orange.png</Source>
+      <Name>Arrows\Orange</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Arrows\Orange.xnb</Output>
+      <Time>2013-10-27T14:30:07.2286736+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Arrows\Pink.png</Source>
+      <Name>Arrows\Pink</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Arrows\Pink.xnb</Output>
+      <Time>2013-10-27T14:30:07.235674+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Arrows\Purple.png</Source>
+      <Name>Arrows\Purple</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Arrows\Purple.xnb</Output>
+      <Time>2013-10-27T14:30:07.2436745+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Arrows\Receptor.png</Source>
+      <Name>Arrows\Receptor</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Arrows\Receptor.xnb</Output>
+      <Time>2013-10-27T14:30:07.3106783+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Arrows\Red.png</Source>
+      <Name>Arrows\Red</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Arrows\Red.xnb</Output>
+      <Time>2013-10-27T14:30:07.3196789+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Arrows\Yellow.png</Source>
+      <Name>Arrows\Yellow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Arrows\Yellow.xnb</Output>
+      <Time>2013-10-27T14:30:07.3266793+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Animation\ArrowReceptorSheet.png</Source>
+      <Name>Animation\ArrowReceptorSheet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Animation\ArrowReceptorSheet.xnb</Output>
+      <Time>2013-10-29T17:53:14.7307051+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Judge\Judge.png</Source>
+      <Name>Judge\Judge</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Judge\Judge.xnb</Output>
+      <Time>2003-07-05T23:58:50+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Arrows\White.png</Source>
+      <Name>Arrows\White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Arrows\White.xnb</Output>
+      <Time>2013-11-08T13:48:03.9382908+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Spritefonts\DefaultFont.spritefont</Source>
+      <Name>Spritefonts\DefaultFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Spritefonts\DefaultFont.xnb</Output>
+      <Time>2013-10-30T21:59:22.7024168+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Songs\Almost There.mp3</Source>
+      <Name>Songs\Almost There</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Songs\Almost There.xnb</Output>
+      <Extra>C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Songs\Almost There.wma</Extra>
+      <Time>2013-11-12T19:15:33.3409212+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Songs\Delirium.mp3</Source>
+      <Name>Songs\Delirium</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Songs\Delirium.xnb</Output>
+      <Extra>C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Songs\Delirium.wma</Extra>
+      <Time>2013-11-14T16:29:27.2471107+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Songs\SMB End Harder.mp3</Source>
+      <Name>Songs\SMB End Harder</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Songs\SMB End Harder.xnb</Output>
+      <Extra>C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Songs\SMB End Harder.wma</Extra>
+      <Time>2013-11-14T17:52:58.9367629+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Songs\SMB Forest Funk.mp3</Source>
+      <Name>Songs\SMB Forest Funk</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Songs\SMB Forest Funk.xnb</Output>
+      <Extra>C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Songs\SMB Forest Funk.wma</Extra>
+      <Time>2013-11-14T17:52:58.9567641+01:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <ContentProjectGUID>{98639997-07FF-48B3-8BE4-D86BA0378249}</ContentProjectGUID>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>Reach</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Users\Fred\Source\Save\CSharpProject\FFR\FFRContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2011-09-01T17:22:30+02:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2011-09-01T17:22:30+02:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2011-09-01T17:22:30+02:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2011-09-01T17:22:30+02:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2011-09-01T17:22:30+02:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2011-09-01T17:22:30+02:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2013-10-27T12:02:14.3930358+01:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

@@ -1,0 +1,16 @@
+C:\Users\Fred\Source\Repos\CSharpProject\FFR.Utils\bin\x86\Debug\FFR.Utils.dll
+C:\Users\Fred\Source\Repos\CSharpProject\FFR.Utils\bin\x86\Debug\FFR.Utils.pdb
+C:\Users\Fred\Source\Repos\CSharpProject\FFR.Utils\obj\x86\Debug\FFR.Utils.csprojResolveAssemblyReference.cache
+C:\Users\Fred\Source\Repos\CSharpProject\FFR.Utils\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Fred\Source\Repos\CSharpProject\FFR.Utils\obj\x86\Debug\FFR.Utils.dll
+C:\Users\Fred\Source\Repos\CSharpProject\FFR.Utils\obj\x86\Debug\FFR.Utils.pdb
+C:\Users\Fred\Source\Repos\CSharpProject\FFR.Utils\bin\x86\Debug\NAudio.dll
+C:\Users\Fred\Source\Repos\CSharpProject\FFR.Utils\bin\x86\Debug\NAudio.xml
+C:\Users\Fred\Source\Save\CSharpProject\FFR.Utils\bin\x86\Debug\FFR.Utils.dll
+C:\Users\Fred\Source\Save\CSharpProject\FFR.Utils\bin\x86\Debug\FFR.Utils.pdb
+C:\Users\Fred\Source\Save\CSharpProject\FFR.Utils\bin\x86\Debug\NAudio.dll
+C:\Users\Fred\Source\Save\CSharpProject\FFR.Utils\bin\x86\Debug\NAudio.xml
+C:\Users\Fred\Source\Save\CSharpProject\FFR.Utils\obj\x86\Debug\FFR.Utils.csprojResolveAssemblyReference.cache
+C:\Users\Fred\Source\Save\CSharpProject\FFR.Utils\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Fred\Source\Save\CSharpProject\FFR.Utils\obj\x86\Debug\FFR.Utils.dll
+C:\Users\Fred\Source\Save\CSharpProject\FFR.Utils\obj\x86\Debug\FFR.Utils.pdb

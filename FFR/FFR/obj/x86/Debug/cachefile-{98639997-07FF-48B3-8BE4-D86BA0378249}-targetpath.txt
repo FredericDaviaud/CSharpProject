@@ -1,0 +1,21 @@
+Content\Arrows\Blue.xnb
+Content\Arrows\Cyan.xnb
+Content\Arrows\Green.xnb
+Content\Arrows\Orange.xnb
+Content\Arrows\Pink.xnb
+Content\Arrows\Purple.xnb
+Content\Arrows\Receptor.xnb
+Content\Arrows\Red.xnb
+Content\Arrows\Yellow.xnb
+Content\Animation\ArrowReceptorSheet.xnb
+Content\Judge\Judge.xnb
+Content\Arrows\White.xnb
+Content\Spritefonts\DefaultFont.xnb
+Content\Songs\Almost There.xnb
+Content\Songs\Almost There.wma
+Content\Songs\Delirium.xnb
+Content\Songs\Delirium.wma
+Content\Songs\SMB End Harder.xnb
+Content\Songs\SMB End Harder.wma
+Content\Songs\SMB Forest Funk.xnb
+Content\Songs\SMB Forest Funk.wma

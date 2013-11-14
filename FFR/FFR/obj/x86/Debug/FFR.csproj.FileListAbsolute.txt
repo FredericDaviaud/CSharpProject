@@ -1,0 +1,64 @@
+C:\Users\Fred\Source\Repos\CSharpProject\FFR\FFR\bin\x86\Debug\FFR.exe
+C:\Users\Fred\Source\Repos\CSharpProject\FFR\FFR\bin\x86\Debug\FFR.pdb
+C:\Users\Fred\Source\Repos\CSharpProject\FFR\FFR\obj\x86\Debug\FFR.csprojResolveAssemblyReference.cache
+C:\Users\Fred\Source\Repos\CSharpProject\FFR\FFR\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Fred\Source\Repos\CSharpProject\FFR\FFR\obj\x86\Debug\FFR.exe
+C:\Users\Fred\Source\Repos\CSharpProject\FFR\FFR\obj\x86\Debug\FFR.pdb
+C:\Users\Fred\Source\Repos\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Arrows\Blue.xnb
+C:\Users\Fred\Source\Repos\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Arrows\Cyan.xnb
+C:\Users\Fred\Source\Repos\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Arrows\Green.xnb
+C:\Users\Fred\Source\Repos\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Arrows\Orange.xnb
+C:\Users\Fred\Source\Repos\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Arrows\Pink.xnb
+C:\Users\Fred\Source\Repos\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Arrows\Purple.xnb
+C:\Users\Fred\Source\Repos\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Arrows\Receptor.xnb
+C:\Users\Fred\Source\Repos\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Arrows\Red.xnb
+C:\Users\Fred\Source\Repos\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Arrows\Yellow.xnb
+C:\Users\Fred\Source\Repos\CSharpProject\FFR\FFR\bin\x86\Debug\FFR.Utils.dll
+C:\Users\Fred\Source\Repos\CSharpProject\FFR\FFR\bin\x86\Debug\FFR.Utils.pdb
+C:\Users\Fred\Source\Repos\CSharpProject\FFR\FFR\bin\x86\Debug\FFR.exe.config
+C:\Users\Fred\Source\Repos\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Animation\ArrowReceptorSheet.xnb
+C:\Users\Fred\Source\Repos\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Judge\Judge.xnb
+C:\Users\Fred\Source\Repos\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Spritefonts\DefaultFont.xnb
+C:\Users\Fred\Source\Repos\CSharpProject\FFR\FFR\bin\x86\Debug\NAudio.xml
+C:\Users\Fred\Source\Repos\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Arrows\White.xnb
+C:\Users\Fred\Source\Repos\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Songs\Almost There.xnb
+C:\Users\Fred\Source\Repos\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Songs\Almost There.wma
+C:\Users\Fred\Source\Repos\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Songs\Delirium.xnb
+C:\Users\Fred\Source\Repos\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Songs\Delirium.wma
+C:\Users\Fred\Source\Repos\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Songs\Computer Music.xnb
+C:\Users\Fred\Source\Repos\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Songs\Computer Music.wma
+C:\Users\Fred\Source\Repos\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Songs\SMB End Harder.xnb
+C:\Users\Fred\Source\Repos\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Songs\SMB Forest Funk.xnb
+C:\Users\Fred\Source\Repos\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Songs\SMB End Harder.wma
+C:\Users\Fred\Source\Repos\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Songs\SMB Forest Funk.wma
+C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Arrows\Blue.xnb
+C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Arrows\Cyan.xnb
+C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Arrows\Green.xnb
+C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Arrows\Orange.xnb
+C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Arrows\Pink.xnb
+C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Arrows\Purple.xnb
+C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Arrows\Receptor.xnb
+C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Arrows\Red.xnb
+C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Arrows\Yellow.xnb
+C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Animation\ArrowReceptorSheet.xnb
+C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Judge\Judge.xnb
+C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Arrows\White.xnb
+C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Spritefonts\DefaultFont.xnb
+C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Songs\Almost There.xnb
+C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Songs\Delirium.xnb
+C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Songs\SMB End Harder.xnb
+C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Songs\SMB Forest Funk.xnb
+C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Songs\Almost There.wma
+C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Songs\Delirium.wma
+C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Songs\SMB End Harder.wma
+C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\Content\Songs\SMB Forest Funk.wma
+C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\FFR.exe.config
+C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\FFR.exe
+C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\FFR.pdb
+C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\FFR.Utils.dll
+C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\FFR.Utils.pdb
+C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\bin\x86\Debug\NAudio.xml
+C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\obj\x86\Debug\FFR.csprojResolveAssemblyReference.cache
+C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\obj\x86\Debug\FFR.exe
+C:\Users\Fred\Source\Save\CSharpProject\FFR\FFR\obj\x86\Debug\FFR.pdb
