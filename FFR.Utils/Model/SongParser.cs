@@ -19,7 +19,7 @@ namespace FFR.Parser
         TimeSpan duration;
 
         /// <summary>
-        /// Parses the .sm (which contains the info for the step dance).
+        /// Parses the .sm (which contains the info for the dance steps).
         /// </summary>
         /// <param name="filePath">The file path.</param>
         /// <returns></returns>

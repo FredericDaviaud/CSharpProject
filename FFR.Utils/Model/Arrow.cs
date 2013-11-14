@@ -15,7 +15,7 @@ namespace FFR.Utils
         public bool isVisible = true;
         public bool isArrowHit = false;
         public bool isMissed = false;
-        public const float ARROW_SPEED = 0.8f;
+        public const float ARROW_SPEED = 0.8f; // Until Options are added...
         
 
         public Arrow() 

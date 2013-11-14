@@ -21,11 +21,11 @@ namespace FFR
         private KeyboardState oldState;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-
-        public const Keys KEY_LEFT =  Keys.S;
-        public const Keys KEY_DOWN =  Keys.D;
-        public const Keys KEY_UP =    Keys.J;
-        public const Keys KEY_RIGHT = Keys.K;
+         
+        public const Keys KEY_LEFT =  Keys.S; // Until Options are added...
+        public const Keys KEY_DOWN =  Keys.D; // Until Options are added...
+        public const Keys KEY_UP =    Keys.J; // Until Options are added...
+        public const Keys KEY_RIGHT = Keys.K; // Until Options are added...
 
         public Engine()
         {
