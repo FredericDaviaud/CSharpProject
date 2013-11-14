@@ -23,6 +23,8 @@ namespace FFR.Utils
         private SpriteFont totalArrows;
         private SpriteFont combo;
         private bool isSongStarted = false;
+        private const String SM_PATH = "Songs\\Almost There.sm"; // Until Menu is added...
+        private const String SONG_PATH = "Songs\\Almost There";  // Until Menu is added...
 
         public Song()
         {
@@ -50,7 +52,7 @@ namespace FFR.Utils
         public void Initialize()
         {
             SongParser parser = new SongParser();
-            ArrowList = parser.parse("Songs\\Almost There.sm");
+            ArrowList = parser.parse(SM_PATH);
             Offset = parser.SongOffset;
 
             foreach (Arrow arrow in ArrowList)
@@ -74,7 +76,7 @@ namespace FFR.Utils
             }
             catch (ArgumentNullException) { }
 
-            SongFile = content.Load<Microsoft.Xna.Framework.Media.Song>("Songs\\Almost There");
+            SongFile = content.Load<Microsoft.Xna.Framework.Media.Song>(SONG_PATH);
             
             foreach (Arrow arrow in ArrowList)
             {
@@ -91,7 +93,7 @@ namespace FFR.Utils
             if (!isSongStarted)
             {
                 if (gameTime.TotalGameTime.Seconds * 1000
-                    + gameTime.TotalGameTime.Milliseconds >= 1200)
+                    + gameTime.TotalGameTime.Milliseconds >= (Offset + 0.3) * 1000)
                 {
                     MediaPlayer.Play(SongFile);
                     isSongStarted = true;

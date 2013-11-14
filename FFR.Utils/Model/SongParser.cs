@@ -15,6 +15,7 @@ namespace FFR.Parser
         
         private Mp3FileReader reader;
         private String arrowColor;
+        private const String SONG_PATH = "Songs\\Almost There.mp3"; //Until Menu is added...
         TimeSpan duration;
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace FFR.Parser
             streamReader = new StreamReader(filePath);
             mesureId = 0;
             float time = 0;
-            reader = new Mp3FileReader("Songs\\Almost There.mp3");
+            reader = new Mp3FileReader(SONG_PATH);
             duration = reader.TotalTime;
             for (int i = 0; i < 27; i++) streamReader.ReadLine();
             
