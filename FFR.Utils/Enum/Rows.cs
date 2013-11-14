@@ -1,5 +1,8 @@
 ﻿namespace FFR.Utils
 {
+    /// <summary>
+    /// The X value in pixel for each row
+    /// </summary>
     public enum Rows
     {
 		Row1 = 265,

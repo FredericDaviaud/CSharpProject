@@ -30,16 +30,28 @@ namespace FFR.Utils
             this.MissCount = missCount;
         }
 
+        /// <summary>
+        /// Loads the content.
+        /// </summary>
+        /// <param name="content">The content.</param>
         public void LoadContent(ContentManager content)
         {
             score = content.Load<SpriteFont>("Spritefonts\\DefaultFont");
         }
 
+        /// <summary>
+        /// Draws the specified sprite batch.
+        /// </summary>
+        /// <param name="spriteBatch">The sprite batch.</param>
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.DrawString(score, string.Format("{0}", getScoreValue()), new Vector2(140, 350), Color.White);
         }
 
+        /// <summary>
+        /// Gets the score value.
+        /// </summary>
+        /// <returns>The actual score</returns>
         private int getScoreValue()
         {
             return PerfectCount * 50 + GreatCount * 25 + GoodCount * 10 - MissCount * 5;

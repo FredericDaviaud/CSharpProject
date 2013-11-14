@@ -11,6 +11,11 @@ namespace FFR.Utils
         public bool isVisible = false;
         private int animationTimer = 0;
 
+        /// <summary>
+        /// Updates the judge sprite.
+        /// </summary>
+        /// <param name="song">The song.</param>
+        /// <param name="row">The row.</param>
         public void Update(Song song, Rows row)
         {
             Arrow nextArrow = song.ArrowList.Find(
@@ -38,6 +43,10 @@ namespace FFR.Utils
             catch (Exception) { }
         }
 
+        /// <summary>
+        /// Check if an arrow as been missed and updates the game accordingly.
+        /// </summary>
+        /// <param name="song">The song.</param>
         public void UpdateMiss(Song song)
         {
             
@@ -64,6 +73,10 @@ namespace FFR.Utils
             catch (Exception) { }
         }
 
+        /// <summary>
+        /// Make the judge disapear after a fixed period of time.
+        /// </summary>
+        /// <param name="gameTime">The game time.</param>
         public void UpdateSpriteTimer(GameTime gameTime)
         {
             animationTimer += gameTime.ElapsedGameTime.Milliseconds;
@@ -73,6 +86,11 @@ namespace FFR.Utils
             }
         }
 
+        /// <summary>
+        /// Draws the specified sprite batch.
+        /// </summary>
+        /// <param name="spriteBatch">The sprite batch.</param>
+        /// <param name="gamerTime">The gamer time.</param>
         public override void Draw(SpriteBatch spriteBatch, GameTime gamerTime)
         {
             if (isVisible)
@@ -90,6 +108,10 @@ namespace FFR.Utils
             }
         }
 
+        /// <summary>
+        /// Gets the accuracy sprite (all those accuracies are on one unique sprite that need to be cut)
+        /// </summary>
+        /// <returns>The Y value in pixel where the sprite needs to be cut</returns>
         private int getAccuracySprite()
         {
             switch (ArrowAccuracy)
@@ -102,6 +124,11 @@ namespace FFR.Utils
             }
         }
 
+        /// <summary>
+        /// Checks if an arrow has been hit, and if it's the case, with which accuracy.
+        /// </summary>
+        /// <param name="song">The song.</param>
+        /// <param name="nextArrow">The next arrow.</param>
         private void checkIfArrowHit(Song song, Arrow nextArrow)
         {
             if (45 <= (int) nextArrow.Position.Y && (int) nextArrow.Position.Y <= 125)

@@ -44,6 +44,9 @@ namespace FFR.Utils
             this.Music = song;
         }
 
+        /// <summary>
+        /// Initializes this instance.
+        /// </summary>
         public void Initialize()
         {
             SongParser parser = new SongParser();
@@ -56,6 +59,10 @@ namespace FFR.Utils
             }
         }
 
+        /// <summary>
+        /// Loads the content.
+        /// </summary>
+        /// <param name="content">The content.</param>
         public void LoadContent(ContentManager content)
         {
             try
@@ -75,6 +82,10 @@ namespace FFR.Utils
             }
         }
 
+        /// <summary>
+        /// Updates the specified game time.
+        /// </summary>
+        /// <param name="gameTime">The game time.</param>
         public void Update(GameTime gameTime)
         {
             if (!isSongStarted)
@@ -92,6 +103,11 @@ namespace FFR.Utils
             }
         }
 
+        /// <summary>
+        /// Draws the specified sprite batch.
+        /// </summary>
+        /// <param name="spriteBatch">The sprite batch.</param>
+        /// <param name="gameTime">The game time.</param>
         public void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
             foreach (Arrow arrow in ArrowList)

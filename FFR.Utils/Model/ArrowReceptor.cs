@@ -18,6 +18,10 @@ namespace FFR.Utils
             currentFrame = 5;
         }
 
+        /// <summary>
+        /// Updates the arrow receptor sprite and handles the animation when key is hit
+        /// </summary>
+        /// <param name="gameTime">The game time.</param>
         public override void Update(GameTime gameTime)
         {
             animationTimer += (int) gameTime.ElapsedGameTime.Ticks;
@@ -33,7 +37,12 @@ namespace FFR.Utils
             }
         }
 
-        public override void Draw(SpriteBatch spriteBatch, GameTime gamerTime)
+        /// <summary>
+        /// Draws the specified sprite batch.
+        /// </summary>
+        /// <param name="spriteBatch">The sprite batch.</param>
+        /// <param name="gameTime">The game time.</param>
+        public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
             Rectangle sourceRectangle = new Rectangle(currentFrame * 143, 0, 143, 143);
 

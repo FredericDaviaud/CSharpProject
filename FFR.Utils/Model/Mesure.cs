@@ -1,5 +1,8 @@
 ﻿namespace FFR.Parser
 {
+    /// <summary>
+    /// A mesure in the musical sense, used for .sm parsing
+    /// </summary>
     class Mesure
     {
         public int id { get; private set; }

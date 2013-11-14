@@ -7,6 +7,9 @@ using FFR.Parser;
 
 namespace FFR
 {
+    /// <summary>
+    /// The game engine class
+    /// </summary>
     public class Engine : Microsoft.Xna.Framework.Game
     {
         private ArrowReceptor arrowReceptorLeft;
@@ -34,6 +37,9 @@ namespace FFR
             Content.RootDirectory = "Content";
         }
 
+        /// <summary>
+        /// Initialize the content needed for the game (sprites, songs, fonts, etc...)
+        /// </summary>
         protected override void Initialize()
         {
             arrowReceptorLeft = new ArrowReceptor(Rows.Row1);
@@ -52,6 +58,9 @@ namespace FFR
             base.Initialize();
         }
 
+        /// <summary>
+        /// Load the content needed for the game (sprites, songs, fonts, etc...)
+        /// </summary>
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
@@ -63,11 +72,18 @@ namespace FFR
             song.LoadContent(Content);
         }
 
+        /// <summary>
+        /// Called when graphics resources need to be unloaded. Override this method to unload any game-specific graphics resources.
+        /// </summary>
         protected override void UnloadContent()
         {
             
         }
 
+        /// <summary>
+        /// Update the content, and check for user input
+        /// </summary>
+        /// <param name="gameTime">Time passed since the last call to Update.</param>
         protected override void Update(GameTime gameTime)
         {
             KeyboardState newState = Keyboard.GetState();
@@ -92,10 +108,6 @@ namespace FFR
                 arrowReceptorRight.isKeyHit = true;
                 judge.Update(song, Rows.Row4);
             }
-            if (oldState.IsKeyUp(Keys.P) && newState.IsKeyDown(Keys.P))
-            {
-                //TODO
-            }
 
             arrowReceptorLeft.Update(gameTime);
             arrowReceptorDown.Update(gameTime);
@@ -109,6 +121,10 @@ namespace FFR
             base.Update(gameTime);
         }
 
+        /// <summary>
+        /// Draw the game content (sprites, fonts, etc...)
+        /// </summary>
+        /// <param name="gameTime">Time passed since the last call to Draw.</param>
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);

@@ -1,5 +1,8 @@
 ﻿namespace FFR.Utils
 {
+    /// <summary>
+    /// The list of possible arrow's color
+    /// </summary>
     public class ArrowColors
     {
         public static string Blue = "Arrows\\Blue";

@@ -17,6 +17,11 @@ namespace FFR.Parser
         private String arrowColor;
         TimeSpan duration;
 
+        /// <summary>
+        /// Parses the .sm (which contains the info for the step dance).
+        /// </summary>
+        /// <param name="filePath">The file path.</param>
+        /// <returns></returns>
         public List<Arrow> parse(String filePath)
         {
             string text;
@@ -87,6 +92,12 @@ namespace FFR.Parser
             return ArrowList;
         }
 
+        /// <summary>
+        /// Gets the color of the arrow (complicated :/ ).
+        /// </summary>
+        /// <param name="mesure">The mesure.</param>
+        /// <param name="note">The note.</param>
+        /// <returns></returns>
         private String getArrowColor(Mesure mesure, int note)
         {
             if (note > (mesure.size * 3 / 4)) note -= (mesure.size * 3 / 4);

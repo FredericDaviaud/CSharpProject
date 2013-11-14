@@ -32,6 +32,9 @@ namespace FFR.Utils
             this.ArrowTime = time;
         }
 
+        /// <summary>
+        /// Initializes this instance.
+        /// </summary>
         public override void Initialize()
         {
             Position = new Vector2(ArrowRow, int.Parse(ConfigurationManager.AppSettings["WINDOW_HEIGHT"]));
@@ -39,11 +42,20 @@ namespace FFR.Utils
             Speed = ARROW_SPEED;
         }
 
+        /// <summary>
+        /// Loads the content.
+        /// </summary>
+        /// <param name="content">The content.</param>
+        /// <param name="assetName">Name of the asset.</param>
         public override void LoadContent(ContentManager content, string assetName)
         {
             Texture = content.Load<Texture2D>(assetName);
         }
 
+        /// <summary>
+        /// Updates the arrow sprite and check if it is visible or not
+        /// </summary>
+        /// <param name="gameTime">The game time.</param>
         public override void Update(GameTime gameTime)
         {
             if (!isArrowHit)
@@ -59,6 +71,11 @@ namespace FFR.Utils
             else isVisible = false;
         }
 
+        /// <summary>
+        /// Draws the specified sprite batch.
+        /// </summary>
+        /// <param name="spriteBatch">The sprite batch.</param>
+        /// <param name="gamerTime">The gamer time.</param>
         public override void Draw(SpriteBatch spriteBatch, GameTime gamerTime)
         {
             if (isVisible)
@@ -73,9 +90,14 @@ namespace FFR.Utils
             }
         }
 
-        protected float arrowReceptorAngle(int i)
+        /// <summary>
+        /// Method to rotate the arrow receptor sprite depending of the row
+        /// </summary>
+        /// <param name="row">The row.</param>
+        /// <returns></returns>
+        protected float arrowReceptorAngle(int row)
         {
-            switch (i)
+            switch (row)
             {
                 case (int) Rows.Row1: return -MathHelper.Pi / 2;
                 case (int) Rows.Row2: return MathHelper.Pi;
