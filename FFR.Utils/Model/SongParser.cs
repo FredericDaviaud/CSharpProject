@@ -26,7 +26,7 @@ namespace FFR.Parser
         {
             string text;
             int lineNumber = 0;
-            int mesureId = 1;
+            int mesureId = 0;
             int mesureSize = 0;
             List<Mesure> mesureList;
 
@@ -68,7 +68,7 @@ namespace FFR.Parser
             }
 
             streamReader = new StreamReader(filePath);
-            mesureId = 1;
+            mesureId = 0;
             float time = 0;
             reader = new Mp3FileReader("Songs\\Almost There.mp3");
             duration = reader.TotalTime;
@@ -83,7 +83,7 @@ namespace FFR.Parser
                     if (text.Substring(1, 1).Equals("1") || text.Substring(1, 1).Equals("2")) ArrowList.Add(new Arrow(getArrowColor(mesureList[mesureId], i + 1), Rows.Row2, time));
                     if (text.Substring(2, 1).Equals("1") || text.Substring(2, 1).Equals("2")) ArrowList.Add(new Arrow(getArrowColor(mesureList[mesureId], i + 1), Rows.Row3, time));
                     if (text.Substring(3, 1).Equals("1") || text.Substring(3, 1).Equals("2")) ArrowList.Add(new Arrow(getArrowColor(mesureList[mesureId], i + 1), Rows.Row4, time));
-                    time += ((float) duration.TotalMilliseconds / 1000) / mesureList.Count / mesureList[mesureId].size;
+                    time += ((float) duration.TotalMilliseconds / 1000) /(float) (mesureList.Count + 0.4f) / mesureList[mesureId].size; // +0.4f for syncing purpose due to computer imperfection
                 }
                 streamReader.ReadLine();
                 mesureId++;
