@@ -8,4 +8,4 @@ d'en faire abstraction pour le moment.
 - le jeu se lance donc directement sur une musique pré-chargé et et immédiatement jouable
 - les contrôles de bases sont les 4 flêches du clavier correspondant aux fleches a l'écran
 - pour changer de musique, il faut remplacer dans le code de Song et SongParser les références indiquées en contantes
-de ces classes
+de ces classes (la liste des musiques disponibles est disponible dans FFRContent puis Songs)
